@@ -1,0 +1,10 @@
+.section1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('../../assets/bg/bg-1.jpg');
+
+  &_title {
+    position: relative;
+    top: 260px;
+    left: 315px;
+  }
+}

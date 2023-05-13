@@ -1,0 +1,62 @@
+.asideBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 178px;
+  height: 100vh;
+  padding-top: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+
+  &_logo {
+    margin-bottom: 204px;
+  }
+
+  &_title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.695em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    transform: rotate(-90deg);
+    width: 322px;
+    margin-bottom: 200px;
+  }
+
+  &_line {
+    width: 1px;
+    height: 154px;
+    background: rgba(255, 255, 255, 0.25);
+    margin-bottom: 80px;
+  }
+
+  &_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &_link {
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    svg {
+      transition: fill 0.3s;
+      fill: rgba(255, 255, 255, 0.5);
+    }
+
+    &:hover {
+      transform: scale(1.5);
+
+      svg {
+        fill: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}

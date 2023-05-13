@@ -1,0 +1,43 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 178px;
+  z-index: 5;
+  padding-top: 280px;
+
+  &_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: border 0.3s;
+
+    &:hover {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+
+      span {
+        background: #ffac30;
+      }
+    }
+
+    span {
+      width: 7px;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+  }
+}

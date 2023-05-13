@@ -1,0 +1,114 @@
+.section2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../../assets/bg/bg-2.jpg');
+
+  &_title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.3em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-top: 110px;
+    width: 530px;
+    margin: 0 auto 64px;
+  }
+
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 250px;
+    margin-bottom: 340px;
+  }
+
+  &_item {
+    padding: 0 144px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+
+    &:nth-child(2) {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 250px;
+        background-image: linear-gradient(
+          to bottom,
+          #ffffff00,
+          #fff,
+          #ffffff00
+        );
+        position: absolute;
+        top: 0;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+
+    &_title {
+      font-family: 'Bruno Ace', cursive;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 70px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    &_subtitle {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 41px;
+      text-align: center;
+      text-transform: uppercase;
+
+      color: #ffffff;
+    }
+  }
+
+  &_link {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 210px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #ffac30;
+      .arrow {
+        &_line {
+          background: #ffac30;
+        }
+
+        &_tip {
+          border-top: 1px solid #ffac30;
+          border-right: 1px solid #ffac30;
+        }
+      }
+    }
+  }
+}
