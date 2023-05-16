@@ -1,0 +1,127 @@
+.section5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../../assets/bg/bg-5.jpg');
+
+  &_title {
+    width: 325px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.3em;
+    color: #ffffff;
+    margin: 188px 0 13px 424px;
+  }
+
+  &_wrap {
+    margin-left: 105px;
+    display: flex;
+    align-items: center;
+    gap: 85px;
+  }
+
+  &_control {
+    width: 235px;
+    height: 235px;
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    &_value {
+      position: absolute;
+      font-family: 'Bruno Ace', cursive;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 70px;
+      color: #ffffff;
+    }
+
+    &_btn_wrap {
+      width: 8px;
+      height: calc(50% + 4px);
+      top: -4px;
+      left: calc(50% - 4px);
+      transform-origin: bottom;
+      position: absolute;
+    }
+
+    &_btn {
+      width: 8px;
+      height: 8px;
+      background: #ffac30;
+      border-radius: 50%;
+      position: relative;
+      display: grid;
+      place-items: center;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.75);
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &::after {
+        width: calc(30px / 1.75);
+        height: calc(30px / 1.75);
+        border: 1px solid rgba(255, 172, 48, 0.5);
+      }
+
+      &::before {
+        width: calc(46px / 1.75);
+        height: calc(46px / 1.75);
+        border: 1px solid rgba(255, 172, 48, 0.2);
+        transition-delay: 0.15s;
+      }
+
+      &-active {
+        transform: scale(1.75);
+
+        &::after,
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &_details {
+    display: grid;
+    grid-template-columns: 80px 300px 25px 471px;
+    align-items: center;
+    gap: 55px;
+
+    &_title {
+      font-family: 'Open Sans';
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 49px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    &_description {
+      font-family: 'Open Sans';
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    &_arrow {
+      height: 25px;
+      border-top: 1px solid #fff;
+      border-right: 1px solid #fff;
+      transform: rotate(45deg);
+    }
+  }
+}
