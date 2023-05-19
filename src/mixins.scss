@@ -1,0 +1,45 @@
+@mixin sectionBackground($url, $opacity) {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, $opacity),
+      rgba(0, 0, 0, $opacity)
+    ),
+    url($url);
+}
+
+@mixin customBorders($opacity: 1) {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #ffffff00, #fff, #ffffff00);
+    position: absolute;
+    top: 0;
+    opacity: $opacity;
+    transition: opacity 0.3s;
+  }
+
+  &::before {
+    left: -1px;
+  }
+
+  &::after {
+    right: -1px;
+  }
+}
+
+@mixin changeArrowColor($color) {
+  .arrow {
+    &_line {
+      background: $color;
+    }
+
+    &_tip {
+      border-top: 1px solid $color;
+      border-right: 1px solid $color;
+    }
+  }
+}

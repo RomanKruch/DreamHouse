@@ -1,20 +1,25 @@
+@import '../../mixins';
+@import '../../variables';
+
 .section5 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../../assets/bg/bg-5.jpg');
+  @include sectionBackground('../../assets/bg/bg-5.jpg', 0.6);
 
   &_title {
     width: 325px;
+
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 22px;
     line-height: 26px;
     letter-spacing: 0.3em;
-    color: #ffffff;
+    color: $white;
+
     margin: 188px 0 13px 424px;
   }
 
   &_wrap {
     margin-left: 105px;
+
     display: flex;
     align-items: center;
     gap: 85px;
@@ -23,36 +28,45 @@
   &_control {
     width: 235px;
     height: 235px;
+
     position: relative;
+
     display: grid;
     place-items: center;
 
     &_value {
       position: absolute;
+
       font-family: 'Bruno Ace', cursive;
       font-weight: 400;
       font-size: 64px;
       line-height: 70px;
-      color: #ffffff;
+      color: $white;
     }
 
     &_btn_wrap {
       width: 8px;
       height: calc(50% + 4px);
+
+      position: absolute;
       top: -4px;
       left: calc(50% - 4px);
+
       transform-origin: bottom;
-      position: absolute;
     }
 
     &_btn {
       width: 8px;
       height: 8px;
-      background: #ffac30;
+
+      background: $gold;
       border-radius: 50%;
+
       position: relative;
+
       display: grid;
       place-items: center;
+
       transition: transform 0.3s;
 
       &:hover {
@@ -63,8 +77,10 @@
       &::before {
         content: '';
         display: block;
-        position: absolute;
         border-radius: 50%;
+
+        position: absolute;
+
         opacity: 0;
         transition: opacity 0.3s;
       }
@@ -72,13 +88,16 @@
       &::after {
         width: calc(30px / 1.75);
         height: calc(30px / 1.75);
+
         border: 1px solid rgba(255, 172, 48, 0.5);
       }
 
       &::before {
         width: calc(46px / 1.75);
         height: calc(46px / 1.75);
+
         border: 1px solid rgba(255, 172, 48, 0.2);
+
         transition-delay: 0.15s;
       }
 
@@ -105,7 +124,7 @@
       font-size: 36px;
       line-height: 49px;
       text-transform: uppercase;
-      color: #ffffff;
+      color: $white;
     }
 
     &_description {
@@ -114,13 +133,15 @@
       font-size: 18px;
       line-height: 30px;
       text-transform: uppercase;
-      color: #ffffff;
+      color: $white;
     }
 
     &_arrow {
       height: 25px;
-      border-top: 1px solid #fff;
-      border-right: 1px solid #fff;
+      
+      border-top: 1px solid $white;
+      border-right: 1px solid $white;
+      
       transform: rotate(45deg);
     }
   }

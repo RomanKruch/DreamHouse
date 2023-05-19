@@ -1,76 +1,43 @@
+@import '../../mixins';
+@import '../../variables';
+
 .section3 {
   &_list {
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-template-rows: 100vh;
     display: flex;
   }
 
   &_item {
     width: calc(100% / 3);
     height: 100vh;
+
     background-position: center;
     background-size: cover;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     transition: all 0.3s;
 
     &:nth-child(1) {
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.65),
-          rgba(0, 0, 0, 0.65)
-        ),
-        url('../../assets/bg/bg-3-1.jpg');
+      @include sectionBackground('../../assets/bg/bg-3-1.jpg', 0.65);
     }
     &:nth-child(2) {
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.65),
-          rgba(0, 0, 0, 0.65)
-        ),
-        url('../../assets/bg/bg-3-2.jpg');
-      position: relative;
-
-      &::before,
-      &::after {
-        content: '';
-        display: block;
-        width: 2px;
-        height: 100vh;
-        background-image: linear-gradient(
-          to bottom,
-          #ffffff00,
-          #fff,
-          #ffffff00
-        );
-        position: absolute;
-        top: 0;
-      }
-
-      &::before {
-        left: -1px;
-      }
-
-      &::after {
-        right: -1px;
-      }
+      @include sectionBackground('../../assets/bg/bg-3-2.jpg', 0.65);
+      @include customBorders;
     }
     &:nth-child(3) {
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.65),
-          rgba(0, 0, 0, 0.65)
-        ),
-        url('../../assets/bg/bg-3-3.jpg');
+      @include sectionBackground('../../assets/bg/bg-3-3.jpg', 0.65);
     }
 
     &:hover {
       width: 70%;
       gap: 60px;
 
-      // filter: brightness(1.2);
+      // filter: brightness(1.2); //BAD
 
       .section3_item_title {
-        color: #ffac30;
+        color: $gold;
         border-right: 2px solid #999;
       }
       .section3_item_wrap {
@@ -84,8 +51,10 @@
       font-size: 36px;
       line-height: 43px;
       text-transform: uppercase;
-      color: #ffffff;
+      color: $white;
+
       transition: all 0.3s;
+
       width: 175px;
       height: 175px;
       display: grid;
@@ -106,7 +75,8 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 30px;
-      color: #ffffff;
+      color: $white;
+
       margin-bottom: 35px;
     }
 
@@ -118,10 +88,12 @@
       line-height: 27px;
       letter-spacing: 0.45em;
       text-transform: uppercase;
-      color: #fff;
+      color: $white;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+      
       cursor: pointer;
       transition: color 0.3s;
 
@@ -131,17 +103,8 @@
       }
 
       &:hover {
-        color: #ffac30;
-        .arrow {
-          &_line {
-            background: #ffac30;
-          }
-
-          &_tip {
-            border-top: 1px solid #ffac30;
-            border-right: 1px solid #ffac30;
-          }
-        }
+        color: $gold;
+        @include changeArrowColor($gold);
       }
     }
   }

@@ -1,0 +1,75 @@
+@import '../../mixins';
+@import '../../variables';
+
+.section6 {
+  // backdrop-filter: blur(15px); // don`t work:(
+    
+  @include sectionBackground('../../assets/bg/bg-5.jpg', 0.6);
+
+  &_list {
+    margin-left: 180px;
+
+    display: grid;
+    grid-template-columns: 580px 420px 360px;
+    grid-template-rows: 729px 380px;
+  }
+
+  &_item {
+    position: relative;
+    @include customBorders(0);
+
+    &:hover {
+      @include customBorders(1);
+
+      .section6_item_overlay {
+        background: transparent;
+      }
+      .section6_item_title {
+        opacity: 1;
+      }
+    }
+
+    &:nth-last-child(n + 3) {
+      align-self: flex-end;
+    }
+
+    &:nth-child(4) {
+      justify-self: flex-end;
+    }
+
+    &_img {
+      height: inherit;
+    }
+
+    &_overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+
+      background: rgba(0, 0, 0, 0.4);
+
+      width: 100%;
+      height: 100%;
+
+      display: grid;
+      place-items: center;
+      transition: background 0.3s;
+    }
+
+    &_title {
+      width: 252px;
+
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 40px;
+      text-transform: uppercase;
+      text-align: center;
+      color: $white;
+      
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+}

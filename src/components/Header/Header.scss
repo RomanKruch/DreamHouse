@@ -1,14 +1,19 @@
+@import '../../variables';
+
 .header {
   position: fixed;
   top: 0;
   left: 178px;
+  z-index: 5;
+
   width: calc(100% - 356px);
   height: 120px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  z-index: 5;
+
+  border-bottom: 1px solid rgba($white, 0.25);
 
   &_wrap {
     display: flex;
@@ -26,7 +31,7 @@
     span {
       content: '';
       height: 2px;
-      background: #fff;
+      background: $white;
     }
 
     &::before {
@@ -48,7 +53,7 @@
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.1em;
-    color: #ffffff;
+    color: $white;
   }
 
   &_call {
@@ -66,22 +71,24 @@
       text-align: right;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-
-      color: #ffac30;
+      color: $gold;
     }
 
     &_btn {
       width: 40px;
       height: 40px;
-      background: rgba(255, 255, 255, 0.15);
+
+      background: rgba($white, 0.15);
       border-radius: 50%;
+
       display: grid;
       place-items: center;
       position: relative;
+
       transition: background 0.3s;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba($white, 0.25);
 
         &::after,
         &::before {
@@ -92,8 +99,10 @@
       &::after,
       &::before {
         position: absolute;
+
         content: '';
         border-radius: 50%;
+
         opacity: 0;
         transition: opacity 0.3s;
       }
@@ -101,13 +110,16 @@
       &::after {
         width: 60px;
         height: 60px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        border: 1px solid rgba($white, 0.3);
       }
 
       &::before {
         width: 80px;
         height: 80px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        border: 1px solid rgba($white, 0.1);
+
         transition-delay: 0.15s;
       }
     }

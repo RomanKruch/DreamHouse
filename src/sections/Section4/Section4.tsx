@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import CircleProgressBar from '../CircleProgressBar/CircleProgressBar';
+import CircleProgressBar from '../../components/CircleProgressBar/CircleProgressBar';
 import './Section4.scss';
 import createActiveClass from '../../helpers/createClassName';
-import RegistrationBaner from '../RegistrationBaner/RegistrationBaner';
+import RegistrationBaner from '../../components/RegistrationBaner/RegistrationBaner';
 
 type TSelectedI = 0 | 1 | 2;
 

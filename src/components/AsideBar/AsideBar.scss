@@ -1,14 +1,18 @@
+@import '../../variables';
+
 .asideBar {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 5;
+
   width: 178px;
   height: 100vh;
   padding-top: 34px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 5;
 
   &_logo {
     margin-bottom: 204px;
@@ -21,8 +25,10 @@
     line-height: 14px;
     letter-spacing: 0.695em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba($white, 0.5);
+
     transform: rotate(-90deg);
+
     width: 322px;
     margin-bottom: 200px;
   }
@@ -30,7 +36,9 @@
   &_line {
     width: 1px;
     height: 154px;
-    background: rgba(255, 255, 255, 0.25);
+
+    background: rgba($white, 0.25);
+
     margin-bottom: 80px;
   }
 
@@ -43,19 +51,20 @@
 
   &_link {
     display: block;
+
     cursor: pointer;
     transition: transform 0.3s;
 
     svg {
+      fill: rgba($white, 0.5);
       transition: fill 0.3s;
-      fill: rgba(255, 255, 255, 0.5);
     }
 
     &:hover {
       transform: scale(1.5);
 
       svg {
-        fill: rgba(255, 255, 255, 1);
+        fill: $white;
       }
     }
   }

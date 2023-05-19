@@ -1,34 +1,33 @@
+@import '../../variables';
+@import '../../mixins';
+
 .registrationBaner {
   width: 740px;
   height: 380px;
-  background: #fff;
+
+  background: $white;
+
   position: absolute;
   z-index: 5;
   bottom: 0;
   right: 0;
+
   padding: 80px 120px;
 
   &_btn {
     width: 100%;
+
     font-weight: 600;
     font-size: 20px;
     line-height: 27px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: $gold;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-    color: #ffac30;
 
-    .arrow {
-      &_line {
-        background: #ffac30;
-      }
-
-      &_tip {
-        border-top: 1px solid #ffac30;
-        border-right: 1px solid #ffac30;
-      }
-    }
+    @include changeArrowColor($gold);
   }
 }

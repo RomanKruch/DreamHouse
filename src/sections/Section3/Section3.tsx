@@ -1,4 +1,4 @@
-import ArrowIcon from '../ArrowIcon/ArrowIcon';
+import ArrowIcon from '../../components/ArrowIcon/ArrowIcon';
 import './Section3.scss';
 
 const Section3 = () => {

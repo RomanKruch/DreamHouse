@@ -1,21 +1,25 @@
+@import '../../variables';
+
 .arrow {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    &_line {
-        width: 100px;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.5);
-        transition: background 0.3s;
-    }
+  &_line {
+    width: 100px;
+    height: 1px;
 
-    &_tip {
-        width: 25px;
-        height: 25px;
-        border-top: 1px solid rgba(255, 255, 255, 0.5);
-        border-right: 1px solid rgba(255, 255, 255, 0.5);
-        transform: rotate(45deg);
-        transition: border 0.3s;
+    background: rgba($white, 0.5);
+    transition: background 0.3s;
+  }
 
-    }
+  &_tip {
+    width: 25px;
+    height: 25px;
+
+    border-top: 1px solid rgba($white, 0.5);
+    border-right: 1px solid rgba($white, 0.5);
+    
+    transform: rotate(45deg);
+    transition: border 0.3s;
+  }
 }

@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .textInput {
   height: 36px;
   position: relative;
@@ -7,39 +9,38 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
+    color: $black;
+
     position: absolute;
     top: 0;
     left: 10px;
+
     transform: translate(0);
     transition: all 0.3s;
-    color: #000;
   }
 
   &_inp {
-    font-family: 'Open Sans', sans-serif;
     width: 100%;
     height: 100%;
+
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
+
     padding-left: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+    border-bottom: 1px solid rgba($black, 0.15);
     transition: border 0.3s;
 
     &:not(:placeholder-shown),
     &:focus {
-      border-bottom: 1px solid #ffac30;
+      border-bottom: 1px solid $gold;
 
       ~ .textInput_label {
-        color: #ffac30;
+        color: $gold;
         transform: translate(-10px, -20px);
       }
     }
-
-    // &:focus {
-    //   ~ .textInput_label {
-    //     color: red;
-    //   }
-    // }
   }
 }
