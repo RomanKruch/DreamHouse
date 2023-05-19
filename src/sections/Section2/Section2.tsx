@@ -1,6 +1,8 @@
 import ArrowIcon from '../../assets/icons/ArrowIcon/ArrowIcon';
 import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner';
+import Section2Item from './Section2Item';
 import './Section2.scss';
+import data from '../../data/section2';
 
 const Section2 = () => {
   return (
@@ -9,19 +11,15 @@ const Section2 = () => {
         <h2 className="section2_title">elite renovation of your apartment</h2>
 
         <ul className="section2_list">
-          <li className="section2_item">
-            <h3 className="section2_item_title">18</h3>
-            <p className="section2_item_subtitle">years on the market</p>
-          </li>
-          <li className="section2_item">
-            <h3 className="section2_item_title">237</h3>
-            <p className="section2_item_subtitle">completed projects</p>
-          </li>
-          <li className="section2_item">
-            <h3 className="section2_item_title">50</h3>
-            <p className="section2_item_subtitle">employees</p>
-          </li>
+          {data.map(item => (
+            <Section2Item
+              title={item.title}
+              subtitle={item.subtitle}
+              key={item.title}
+            />
+          ))}
         </ul>
+
         <a className="section2_link">
           more info about us <ArrowIcon width={95} />
         </a>
