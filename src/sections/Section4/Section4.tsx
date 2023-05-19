@@ -5,6 +5,7 @@ import createActiveClass from '../../helpers/createActiveClassName';
 import Baner from '../../components/Baner/Baner';
 import BanerInfo from '../../components/BanerInfo/BanerInfo';
 import data from '../../data/section4';
+import Section4Item from './Section4Item';
 
 const Section4 = () => {
   const [value, setValue] = useState(30);
@@ -33,7 +34,6 @@ const Section4 = () => {
           Select an area size & one of the service packages:
         </h2>
         <div className="section4_wrap">
-
           <div className="section4_range">
             <p className="section4_range_title">m²</p>
             <div className="section4_range_wrap">
@@ -61,22 +61,12 @@ const Section4 = () => {
               ></div>
 
               {data.map((_, i) => (
-                <>
-                  <button
-                    type="button"
-                    className={createActiveClass(
-                      'section4_select_btn',
-                      selectedI === i,
-                    )}
-                    onClick={() => setSelectedI(i)}
-                  ></button>
-                  <div
-                    className={createActiveClass(
-                      'section4_select_line',
-                      selectedI >= i + 1,
-                    )}
-                  ></div>
-                </>
+                <Section4Item
+                  i={i}
+                  selectedI={selectedI}
+                  setSelectedI={setSelectedI}
+                  key={i}
+                />
               ))}
               <div
                 className={createActiveClass(

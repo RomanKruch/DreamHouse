@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ArrowIcon from '../../assets/icons/ArrowIcon/ArrowIcon';
 import TextInput from '../../common/TextInput/TextInput';
 import './RegForm.scss';
 import BtnWithArrow from '../../common/BtnWithArrow/BtnWithArrow';
