@@ -1,0 +1,16 @@
+@import '../../variables';
+
+.Baner {
+  width: 740px;
+  height: 380px;
+
+  background: $white;
+
+  position: absolute;
+  z-index: $middle;
+  bottom: 0;
+  right: 0;
+
+  padding: 80px 120px;
+
+}

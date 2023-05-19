@@ -1,0 +1,15 @@
+@import '../../variables';
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $modal;
+
+  display: grid;
+  place-items: center;
+  background: rgba($black, 0.4);
+  backdrop-filter: blur(15px);
+}

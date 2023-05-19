@@ -5,9 +5,10 @@ interface IProps {
   placeholder: string;
   value: string;
   setValue: (value: string) => void;
+  white?: boolean;
 }
 
-const TextInput = ({ placeholder, value, setValue }: IProps) => {
+const TextInput = ({ placeholder, value, setValue, white = false }: IProps) => {
   const id = uuid();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,14 +18,17 @@ const TextInput = ({ placeholder, value, setValue }: IProps) => {
   return (
     <div className="textInput">
       <input
-        className="textInput_inp"
+        className={`textInput_inp ${white && 'textInput_inp-white'}`}
         type="text"
         id={id}
         value={value}
         onChange={onChange}
-        placeholder=' '
+        placeholder=" "
       />
-      <label className="textInput_label" htmlFor={id}>
+      <label
+        className={`textInput_label ${white && 'textInput_label-white'}`}
+        htmlFor={id}
+      >
         {placeholder}
       </label>
     </div>

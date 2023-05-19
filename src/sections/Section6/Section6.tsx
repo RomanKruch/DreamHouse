@@ -4,7 +4,7 @@ import img2 from '../../assets/section-6/img-2.jpg';
 import img3 from '../../assets/section-6/img-3.jpg';
 import img4 from '../../assets/section-6/img-4.jpg';
 import img5 from '../../assets/section-6/img-5.jpg';
-import RegistrationBaner from '../../components/RegistrationBaner/RegistrationBaner';
+import RegistrationBaner from '../../components/Baner/Baner';
 
 const items = [
   {
@@ -42,23 +42,23 @@ const items = [
 const Section6 = () => {
   return (
     <section className="section6" id="6">
-        <ul className="section6_list">
-          {items.map(({ title, img, width, height }) => (
-            <li className="section6_item" key={title} style={{ width, height }}>
-              <img
-                src={img}
-                alt={title}
-                className="section6_item_img"
-                width={width}
-                height={height}
-              />
-              <div className="section6_item_overlay">
-                <h3 className="section6_item_title">{title}</h3>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <RegistrationBaner />
+      <ul className="section6_list">
+        {items.map(({ title, img, width, height }) => (
+          <li className="section6_item" key={title} style={{ width, height }}>
+            <img
+              src={img}
+              alt={title}
+              className="section6_item_img"
+              width={width}
+              height={height}
+            />
+            <div className="section6_item_overlay">
+              <h3 className="section6_item_title">{title}</h3>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <RegistrationBaner />
     </section>
   );
 };

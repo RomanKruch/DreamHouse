@@ -8,7 +8,7 @@ import icon3 from '../../assets/section-5/icon-3.png';
 import icon4 from '../../assets/section-5/icon-4.png';
 import icon5 from '../../assets/section-5/icon-5.png';
 import icon6 from '../../assets/section-5/icon-6.png';
-import RegistrationBaner from '../../components/RegistrationBaner/RegistrationBaner';
+import RegistrationBaner from '../../components/Baner/Baner';
 
 const steps = [
   {

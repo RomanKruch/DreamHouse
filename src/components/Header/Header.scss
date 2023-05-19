@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 178px;
-  z-index: 5;
+  z-index: $overAll;
 
   width: calc(100% - 356px);
   height: 120px;
@@ -121,6 +121,17 @@
         border: 1px solid rgba($white, 0.1);
 
         transition-delay: 0.15s;
+      }
+
+      &-active {
+        svg {
+          z-index: $middle;
+        }
+
+        &::after {
+          background-color: $white;
+          opacity: 1;
+        }
       }
     }
   }

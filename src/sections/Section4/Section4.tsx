@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CircleProgressBar from '../../components/CircleProgressBar/CircleProgressBar';
 import './Section4.scss';
 import createActiveClass from '../../helpers/createClassName';
-import RegistrationBaner from '../../components/RegistrationBaner/RegistrationBaner';
+import RegistrationBaner from '../../components/Baner/Baner';
 
 type TSelectedI = 0 | 1 | 2;
 
