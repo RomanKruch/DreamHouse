@@ -1,3 +1,4 @@
+import createClassName from '../../helpers/createClassName';
 import './TextInput.scss';
 import { v4 as uuid } from 'uuid';
 
@@ -18,7 +19,7 @@ const TextInput = ({ placeholder, value, setValue, white = false }: IProps) => {
   return (
     <div className="textInput">
       <input
-        className={`textInput_inp ${white && 'textInput_inp-white'}`}
+        className={createClassName('textInput_inp', 'white', white)}
         type="text"
         id={id}
         value={value}
@@ -26,7 +27,7 @@ const TextInput = ({ placeholder, value, setValue, white = false }: IProps) => {
         placeholder=" "
       />
       <label
-        className={`textInput_label ${white && 'textInput_label-white'}`}
+        className={createClassName('textInput_label', 'white', white)}
         htmlFor={id}
       >
         {placeholder}

@@ -1,21 +1,17 @@
 import { useState } from 'react';
-import ArrowIcon from '../ArrowIcon/ArrowIcon';
-import TextInput from '../TextInput/TextInput';
+import ArrowIcon from '../../assets/icons/ArrowIcon/ArrowIcon';
+import TextInput from '../../common/TextInput/TextInput';
 import './RegForm.scss';
+import BtnWithArrow from '../../common/BtnWithArrow/BtnWithArrow';
 
 interface IProps {
   white?: boolean;
+  onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const RegForm = ({ white = false }: IProps) => {
+const RegForm = ({ white = false, onSubmit }: IProps) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    console.log(`Name ${name} Phone ${phone}`);
-  };
 
   return (
     <form className="regForm" onSubmit={onSubmit}>
@@ -33,10 +29,7 @@ const RegForm = ({ white = false }: IProps) => {
         white={white}
       />
 
-      <button type="submit" className="regForm_btn">
-        discuss a project
-        <ArrowIcon />
-      </button>
+      <BtnWithArrow text="discuss a project" white={white} />
     </form>
   );
 };

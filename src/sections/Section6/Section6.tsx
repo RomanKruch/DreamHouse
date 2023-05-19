@@ -1,10 +1,14 @@
 import './Section6.scss';
+import { useState } from 'react';
 import img1 from '../../assets/section-6/img-1.jpg';
 import img2 from '../../assets/section-6/img-2.jpg';
 import img3 from '../../assets/section-6/img-3.jpg';
 import img4 from '../../assets/section-6/img-4.jpg';
 import img5 from '../../assets/section-6/img-5.jpg';
-import RegistrationBaner from '../../components/Baner/Baner';
+import Baner from '../../components/Baner/Baner';
+import RegForm from '../../components/RegForm/RegForm';
+import createActiveClass from '../../helpers/createActiveClassName';
+import BanerInfo from '../../components/BanerInfo/BanerInfo';
 
 const items = [
   {
@@ -40,11 +44,18 @@ const items = [
 ];
 
 const Section6 = () => {
+  const [selectedI, setSelectedI] = useState(0);
+
   return (
     <section className="section6" id="6">
       <ul className="section6_list">
-        {items.map(({ title, img, width, height }) => (
-          <li className="section6_item" key={title} style={{ width, height }}>
+        {items.map(({ title, img, width, height }, i) => (
+          <li
+            className={createActiveClass('section6_item', selectedI === i)}
+            key={title}
+            style={{ width, height }}
+            onClick={() => setSelectedI(i)}
+          >
             <img
               src={img}
               alt={title}
@@ -58,7 +69,12 @@ const Section6 = () => {
           </li>
         ))}
       </ul>
-      <RegistrationBaner />
+      <Baner>
+        <BanerInfo
+          title={items[selectedI].title}
+          description={items[selectedI].title}
+        />
+      </Baner>
     </section>
   );
 };

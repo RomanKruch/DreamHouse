@@ -1,10 +1,32 @@
 import { useState } from 'react';
-import CircleProgressBar from '../../components/CircleProgressBar/CircleProgressBar';
+import CircleProgressBar from '../../common/CircleProgressBar/CircleProgressBar';
 import './Section4.scss';
-import createActiveClass from '../../helpers/createClassName';
-import RegistrationBaner from '../../components/Baner/Baner';
+import createActiveClass from '../../helpers/createActiveClassName';
+import Baner from '../../components/Baner/Baner';
+import BanerInfo from '../../components/BanerInfo/BanerInfo';
 
 type TSelectedI = 0 | 1 | 2;
+
+const items = [
+  {
+    id: 0,
+    title: 'Elite',
+    description:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.',
+  },
+  {
+    id: 1,
+    title: 'Vip',
+    description:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.',
+  },
+  {
+    id: 2,
+    title: 'Extra',
+    description:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.',
+  },
+];
 
 const Section4 = () => {
   const [value, setValue] = useState(30);
@@ -111,7 +133,12 @@ const Section4 = () => {
         </div>
       </div>
 
-      <RegistrationBaner />
+      <Baner>
+        <BanerInfo
+          title={items[selectedI].title}
+          description={items[selectedI].description}
+        />
+      </Baner>
     </section>
   );
 };

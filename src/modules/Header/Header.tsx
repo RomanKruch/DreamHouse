@@ -1,7 +1,7 @@
 import './Header.scss';
 import Phone from '../../assets/icons/phone_icon';
 import CloseIcon from '../../assets/icons/close_icon';
-import createActiveClass from '../../helpers/createClassName';
+import createActiveClass from '../../helpers/createActiveClassName';
 
 interface IProps {
   isOpen: boolean;

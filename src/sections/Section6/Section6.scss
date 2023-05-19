@@ -3,7 +3,7 @@
 
 .section6 {
   // backdrop-filter: blur(15px); // don`t work:(
-    
+
   @include sectionBackground('../../assets/bg/bg-5.jpg', 0.6);
 
   &_list {
@@ -18,7 +18,20 @@
     position: relative;
     @include customBorders(0);
 
+    cursor: pointer;
+
     &:hover {
+      @include customBorders(1);
+
+      .section6_item_overlay {
+        background: transparent;
+      }
+      .section6_item_title {
+        opacity: 1;
+      }
+    }
+
+    &-active {
       @include customBorders(1);
 
       .section6_item_overlay {
@@ -67,7 +80,7 @@
       text-transform: uppercase;
       text-align: center;
       color: $white;
-      
+
       opacity: 0;
       transition: opacity 0.3s;
     }

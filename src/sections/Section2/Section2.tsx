@@ -1,5 +1,5 @@
-import ArrowIcon from '../../components/ArrowIcon/ArrowIcon';
-import RegistrationBaner from '../../components/RegistrationBaner/RegistrationBaner';
+import ArrowIcon from '../../assets/icons/ArrowIcon/ArrowIcon';
+import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner';
 import './Section2.scss';
 
 const Section2 = () => {

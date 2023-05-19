@@ -1,0 +1,30 @@
+@import '../../variables';
+@import '../../mixins';
+
+.btnWithArrow {
+  width: 100%;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba($black, 0.8);
+  @include changeArrowColor($black);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: color 0.3s;
+
+  &:hover {
+    color: $gold;
+    @include changeArrowColor($gold);
+  }
+
+  &-white {
+    color: $white;
+    @include changeArrowColor($white);
+  }
+}

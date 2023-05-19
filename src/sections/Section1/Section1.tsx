@@ -1,6 +1,6 @@
 import './Section1.scss';
 import title from '../../assets/title.png';
-import RegistrationBaner from '../../components/RegistrationBaner/RegistrationBaner';
+import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner';
 
 const Section1 = () => {
   return (

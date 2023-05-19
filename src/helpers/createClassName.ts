@@ -1,6 +1,13 @@
-const createActiveClass = (defClass: string, condition: boolean) => {
-  const activeClass = condition ? ' ' + defClass + '-active' : '';
-  return defClass + activeClass;
+const createClassName = (
+  defClass: string,
+  mark: string,
+  condition: boolean,
+) => {
+  if (condition) {
+    return `${defClass} ${defClass}-${mark}`;
+  }
+
+  return defClass;
 };
 
-export default createActiveClass;
+export default createClassName;

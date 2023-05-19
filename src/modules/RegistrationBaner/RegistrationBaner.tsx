@@ -1,5 +1,5 @@
-import Baner from '../Baner/Baner';
-import RegForm from '../RegForm/RegForm';
+import Baner from '../../components/Baner/Baner';
+import RegForm from '../../components/RegForm/RegForm';
 
 const RegistrationBaner = () => {
   return (
