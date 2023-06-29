@@ -79,5 +79,9 @@
     &:hover {
       scale: 1.75;
     }
+
+    @media (max-width: $tablet) {
+      scale: 2;
+    }
   }
 }
