@@ -1,8 +1,8 @@
 @import '../../variables';
 
-.Baner {
-  width: 740px;
-  height: 380px;
+.baner {
+  width: min(38vw, 740px);
+  height: min(35vh, 380px);
 
   background: $white;
 
@@ -11,6 +11,23 @@
   bottom: 0;
   right: 0;
 
-  padding: 80px 120px;
+  padding: min(7vh, 80px) min(6vw, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  @media (max-width: $tablet) {
+    width: 100vw;
+    height: 400px;
+
+    left: 0;
+
+    padding: 80px 120px;
+  }
+
+  @media (max-width: $mobile) {
+    height: 240px;
+
+    padding: 40px;
+  }
 }

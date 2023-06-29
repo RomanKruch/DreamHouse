@@ -10,6 +10,7 @@
   letter-spacing: 0.45em;
   text-transform: uppercase;
   color: rgba($black, 0.8);
+  text-align: left;
   @include changeArrowColor($black);
 
   display: flex;
@@ -17,6 +18,10 @@
   justify-content: space-between;
 
   transition: color 0.3s;
+
+  @media (max-width: $laptop) {
+    font-size: 16px;
+  }
 
   &:hover {
     color: $gold;

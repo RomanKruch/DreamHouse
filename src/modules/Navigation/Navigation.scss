@@ -2,13 +2,15 @@
 
 .navigation {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 25vh;
+  right: calc(min(9vw, 178px) / 2);
   z-index: $middle;
 
-  width: 178px;
+  width: 25px;
 
-  padding-top: 280px;
+  @media (max-width: $tablet) {
+    display: none;
+  }
 
   &_list {
     display: flex;

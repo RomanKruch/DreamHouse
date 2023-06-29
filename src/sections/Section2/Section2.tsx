@@ -1,5 +1,5 @@
 import ArrowIcon from '../../assets/icons/ArrowIcon/ArrowIcon';
-import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner';
+// import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner';
 import Section2Item from './Section2Item';
 import './Section2.scss';
 import data from '../../data/section2';
@@ -21,11 +21,11 @@ const Section2 = () => {
         </ul>
 
         <a className="section2_link">
-          more info about us <ArrowIcon width={95} />
+          more info about us <ArrowIcon />
         </a>
       </div>
 
-      <RegistrationBaner />
+      {/* <RegistrationBaner /> */}
     </section>
   );
 };

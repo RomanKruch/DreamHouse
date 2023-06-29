@@ -17,7 +17,7 @@ const Section4Item = ({ i, selectedI, setSelectedI }: IProps) => {
       <div
         className={createActiveClass(
           'section4_select_line',
-          selectedI >= i + 1,
+          selectedI >= i,
         )}
       ></div>
     </>

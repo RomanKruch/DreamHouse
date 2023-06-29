@@ -1,0 +1,55 @@
+@import '../../variables';
+@import '../../mixins';
+
+.navModal {
+  &_list {
+    display: flex;
+    margin: 0 min(9vw, 178px);
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      height: 100%;
+      margin: 0;
+      padding-top: clamp(80px, 11vh, 120px);
+    }
+  }
+
+  &_item {
+    flex: 1;
+    height: 100vh;
+
+    @media (max-width: $tablet) {
+      width: 100vw;
+      height: inherit;
+    }
+  }
+
+  &_link {
+    height: 100%;
+    padding: 0 5px;
+
+    display: grid;
+    place-items: center;
+
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 41px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $white;
+    transition: background 0.3s;
+
+    @include customBorders(0);
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.25);
+      @include customBorders(1);
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 18px;
+    }
+  }
+}

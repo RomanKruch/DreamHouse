@@ -12,11 +12,11 @@ const Section3Item = ({ title, description }: IProps) => {
         <p className="section3_item_description">{description}</p>
         <a className="section3_item_link">
           gallery
-          <ArrowIcon width={115} />
+          <ArrowIcon />
         </a>
         <a className="section3_item_link">
           list of services
-          <ArrowIcon width={57} />
+          <ArrowIcon />
         </a>
       </div>
     </li>

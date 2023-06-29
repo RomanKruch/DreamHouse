@@ -4,8 +4,18 @@
 .section4 {
   @include sectionBackground('../../assets/bg/bg-4.jpg', 0.6);
 
+  @media (max-width: $tablet) {
+    margin-bottom: 400px;
+    height: 720px;
+    padding-top: 50px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 240px;
+  }
+
   &_title {
-    width: 550px;
+    max-width: 550px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 22px;
@@ -13,67 +23,31 @@
     letter-spacing: 0.3em;
     color: $white;
 
-    margin: 160px 0 13px 368px;
+    margin: min(160px, 12vh) 0 13px min(368px, 15vw);
+
+    @media (max-width: $tablet) {
+      margin: 0 auto 20px;
+      text-align: center;
+      font-size: 18px;
+      line-height: normal;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 14px;
+    }
   }
 
   &_wrap {
-    margin-left: 105px;
+    margin-left: min(105px, 1.5vw);
 
     display: flex;
     align-items: center;
-    gap: 28px;
-  }
+    gap: min(28px, 1vw);
 
-  &_range {
-    width: 235px;
-
-    &_title {
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 48px;
-      letter-spacing: 0.1em;
-      color: $white;
-      text-align: center;
-
-      margin-bottom: 5px;
-      transform: translateX(6.5px);
-    }
-
-    &_wrap {
-      position: relative;
-
-      &::before {
-        content: '';
-        display: block;
-        width: 8px;
-        height: 8px;
-
-        position: absolute;
-        left: 50%;
-        top: -2.5px;
-        transform: translateX(-50%);
-
-        background: $gold;
-        border-radius: 50%;
-      }
-    }
-
-    &_inp {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      width: 130px;
-      background: transparent;
-      transform: translate(-50%, -50%);
-
-      font-family: 'Bruno Ace', cursive;
-      font-weight: 400;
-      font-size: 64px;
-      text-align: center;
-      line-height: 70px;
-      color: $white;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: 40px;
+      margin-left: 0;
     }
   }
 
@@ -85,6 +59,23 @@
 
       margin-left: 34px;
       margin-bottom: 20px;
+
+      @media (max-width: $laptop) {
+        gap: 1.3vw;
+      }
+
+      @media (max-width: $tablet) {
+        gap: 0;
+        justify-content: center;
+        margin-left: 0;
+      }
+
+      @media (max-width: $mobile) {
+        margin-bottom: 10px;
+        justify-content: flex-start;
+        margin-left: 20px;
+        gap: 8px;
+      }
     }
 
     &_title {
@@ -97,12 +88,37 @@
       line-height: 34px;
       text-transform: uppercase;
       color: $white;
+
+      @media (max-width: $laptop) {
+        width: 10vw;
+      }
+
+      @media (max-width: $tablet) {
+        width: 140px;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 16px;
+        width: 75px;
+      }
     }
 
     &_btn_wrap {
       display: flex;
       gap: 7px;
       align-items: center;
+
+      @media (max-width: $laptop) {
+        gap: 0.4vw;
+      }
+
+      @media (max-width: $tablet) {
+        gap: 7px;
+      }
+
+      @media (max-width: $mobile) {
+        gap: 3px;
+      }
     }
 
     &_btn {
@@ -130,6 +146,16 @@
           background: $gold;
         }
       }
+
+      @media (max-width: $mobile) {
+        width: 22px;
+        height: 22px;
+
+        &::before {
+          width: 4px;
+          height: 4px;
+        }
+      }
     }
 
     &_line {
@@ -144,6 +170,23 @@
 
       &-active {
         background-color: $gold;
+      }
+
+      @media (max-width: $laptop) {
+        width: min(100px, 6vw);
+      }
+
+      @media (max-width: $tablet) {
+        width: 80px;
+      }
+
+      @media (max-width: $mobile) {
+        width: 55px;
+
+        &:first-child,
+        &:last-child {
+          width: 45px;
+        }
       }
     }
 
@@ -160,10 +203,22 @@
         border-top: 1px solid $gold;
         border-right: 1px solid $gold;
       }
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
     }
   }
 
   &_price {
+    display: flex;
+    align-items: center;
+    gap: min(28px, 1vw);
+
+    @media (max-width: $tablet) {
+      gap: 15px;
+    }
+
     &_numbers {
       font-family: 'Bruno Ace', cursive;
       font-weight: 400;
@@ -172,6 +227,22 @@
       color: $white;
 
       margin-top: 50px;
+
+      @media (max-width: $laptop) {
+        font-size: 44px;
+        line-height: 50px;
+      }
+
+      @media (max-width: $tablet) {
+        font-size: 64px;
+        line-height: 70px;
+        margin-top: 0;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 40px;
+        line-height: normal;
+      }
     }
 
     &_currency {
@@ -182,8 +253,30 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: $white;
-      
+
       margin-top: 50px;
+
+      @media (max-width: $laptop) {
+        font-size: 20px;
+        line-height: 40px;
+      }
+
+      @media (max-width: $tablet) {
+        font-size: 24px;
+        line-height: 48px;
+        margin-top: 0;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 18px;
+        line-height: normal;
+      }
+    }
+  }
+
+  &_baner {
+    @media (max-width: $tablet) {
+      top: 720px;
     }
   }
 }

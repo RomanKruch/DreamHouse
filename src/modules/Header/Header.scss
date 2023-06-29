@@ -3,11 +3,12 @@
 .header {
   position: fixed;
   top: 0;
-  left: 178px;
+  left: min(9vw, 178px);
   z-index: $overAll;
 
-  width: calc(100% - 356px);
-  height: 120px;
+  width: calc(100vw - min(9vw, 178px) * 2);
+  // height: 120px;
+  height: clamp(80px, 11vh, 120px);
 
   display: flex;
   justify-content: space-between;
@@ -15,10 +16,27 @@
 
   border-bottom: 1px solid rgba($white, 0.25);
 
+  @media (max-width: $tablet) {
+    width: 100vw;
+    left: 0;
+    
+    padding-inline: 20px;
+
+    position: absolute;
+  }
+
+  &_logo {
+    display: none;
+    @media (max-width: $tablet) {
+      display: inherit;
+    }
+  }
+
   &_wrap {
     display: flex;
     align-items: center;
-    gap: 120px;
+    // gap: 120px;
+    gap: min(6vw, 120px);
   }
 
   &_burgerBtn {
@@ -32,6 +50,9 @@
       content: '';
       height: 2px;
       background: $white;
+
+      transform-origin: center;
+      transition: all 0.3s;
     }
 
     &::before {
@@ -45,6 +66,26 @@
     &::after {
       width: 30px;
     }
+
+    &-active {
+      &::before,
+      &::after,
+      span {
+        width: 30px;
+      }
+
+      &::before {
+        transform: rotate(45deg) translate(5.5px, 5.5px);
+      }
+
+      span {
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
   }
 
   &_phone {
@@ -54,13 +95,18 @@
     line-height: 19px;
     letter-spacing: 0.1em;
     color: $white;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
   }
 
   &_call {
     &_wrap {
       display: flex;
       align-items: center;
-      gap: 65px;
+      // gap: 65px;
+      gap: min(3vw, 65px);
     }
 
     &_subtitle {
@@ -72,6 +118,10 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: $gold;
+
+      @media (max-width: $mobile) {
+        display: none;
+      }
     }
 
     &_btn {
@@ -135,4 +185,14 @@
       }
     }
   }
+}
+
+.menu__item--doner {
+  flex-direction: column;
+}
+.menu__item--doner .line:nth-child(2) {
+  width: 32px;
+}
+.menu__item--doner .line:nth-child(3) {
+  width: 20px;
 }

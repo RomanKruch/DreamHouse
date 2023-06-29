@@ -1,0 +1,83 @@
+@import '../../variables';
+
+.range {
+  width: 235px;
+
+  &_title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 48px;
+    letter-spacing: 0.1em;
+    color: $white;
+    text-align: center;
+
+    margin-bottom: 5px;
+    transform: translateX(6.5px);
+  }
+
+  &_wrap {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+
+      position: absolute;
+      left: 50%;
+      top: -3.5px;
+      transform: translateX(-50%);
+
+      background: $gold;
+      border-radius: 50%;
+    }
+  }
+
+  &_inp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 130px;
+    background: transparent;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Bruno Ace', cursive;
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+    line-height: 70px;
+    color: $white;
+
+    @media (max-width: $mobile) {
+      font-size: 44px;
+      line-height: normal;
+    }
+  }
+
+  &_btn_wrap {
+    width: 8px;
+    height: calc(50% + 1px);
+
+    position: absolute;
+    top: -4px;
+    left: calc(50% - 4px);
+
+    transform-origin: bottom;
+  }
+
+  &_btn {
+    width: 8px;
+    height: 8px;
+
+    background: $gold;
+    border-radius: 50%;
+    transition: scale 0.3s;
+
+    &:hover {
+      scale: 1.75;
+    }
+  }
+}

@@ -2,19 +2,31 @@ import './Header.scss';
 import Phone from '../../assets/icons/phone_icon';
 import CloseIcon from '../../assets/icons/close_icon';
 import createActiveClass from '../../helpers/createActiveClassName';
+import Logo from '../../common/Logo/Logo';
 
 interface IProps {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isOpenCall: boolean;
+  setIsOpenCall: React.Dispatch<React.SetStateAction<boolean>>;
+  isOpenNav: boolean;
+  setIsOpenNav: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Header = ({ isOpen, setIsOpen }: IProps) => {
+const Header = ({
+  isOpenCall,
+  setIsOpenCall,
+  isOpenNav,
+  setIsOpenNav,
+}: IProps) => {
   return (
     <header className="header">
       <div className="header_wrap">
-        {!isOpen && (
+        {!isOpenCall && (
           <>
-            <button className="header_burgerBtn">
+            <Logo className='header_logo'/>
+            <button
+              className={createActiveClass('header_burgerBtn', isOpenNav)}
+              onClick={() => setIsOpenNav(state => !state)}
+            >
               <span></span>
             </button>
             <p className="header_phone">+38 (097) 987 78 88</p>
@@ -25,10 +37,13 @@ const Header = ({ isOpen, setIsOpen }: IProps) => {
       <div className="header_call_wrap">
         <p className="header_call_subtitle">request for a call</p>
         <button
-          className={createActiveClass('header_call_btn', isOpen)}
-          onClick={() => setIsOpen(state => !state)}
+          className={createActiveClass('header_call_btn', isOpenCall)}
+          onClick={() => {
+            setIsOpenCall(state => !state);
+            setIsOpenNav(false);
+          }}
         >
-          {isOpen ? <CloseIcon /> : <Phone />}
+          {isOpenCall ? <CloseIcon /> : <Phone />}
         </button>
       </div>
     </header>

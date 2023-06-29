@@ -7,10 +7,10 @@ interface IProps {
 
 const BanerInfo = ({ title, description }: IProps) => {
   return (
-    <>
+    <div>
       <h2 className="banerInfo_title">{title}</h2>
       <p className="banerInfo_description">{description}</p>
-    </>
+    </div>
   );
 };
 

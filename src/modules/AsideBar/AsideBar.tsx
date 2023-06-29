@@ -1,22 +1,16 @@
 import './AsideBar.scss';
-import logo from '../../assets/logo.png';
 import FacebookIcon from '../../assets/icons/facebook_icon';
 import InstagramIcon from '../../assets/icons/instagram_icon';
 import YoutubeIcon from '../../assets/icons/youtube_icon';
 import TelegramIcon from '../../assets/icons/telegram_icon';
+import Logo from '../../common/Logo/Logo';
 
 const icons = [FacebookIcon, InstagramIcon, YoutubeIcon, TelegramIcon];
 
 const AsideBar = () => {
   return (
     <aside className="asideBar">
-      <img
-        src={logo}
-        alt="logo"
-        width={50}
-        height={57}
-        className="asideBar_logo"
-      />
+      <Logo className='asideBar_logo'/>
 
       <p className="asideBar_title">apartment renovation</p>
 

@@ -5,16 +5,27 @@
   align-items: center;
 
   &_line {
-    width: 100px;
+    // width: 100px;
+    width: min(100px, 5vw);
     height: 1px;
 
     background: rgba($white, 0.5);
     transition: background 0.3s;
+
+    @media (max-width: $tablet) {
+      width: 120px;
+    }
+
+    @media (max-width: $mobile) {
+      width: 80px;
+    }
   }
 
   &_tip {
-    width: 25px;
-    height: 25px;
+    // width: 25px;
+    // height: 25px;
+    width: clamp(16px, 1vw, 25px);
+    height: clamp(16px, 1vw, 25px);
 
     border-top: 1px solid rgba($white, 0.5);
     border-right: 1px solid rgba($white, 0.5);

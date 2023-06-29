@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap');
 
+@import './variables';
 // font-family: 'Bruno Ace', cursive;
 // font-family: 'Open Sans', sans-serif;
 // font-family: 'Roboto', sans-serif;
@@ -18,7 +19,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   position: relative;
-  color: #FFF;
+  color: #fff;
 }
 
 img {
@@ -34,6 +35,7 @@ ol {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -50,19 +52,6 @@ input {
   }
 }
 
-.app {
-  &_overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 178px 1fr 178px;
-    z-index: 2;
-  }
-}
-
 section {
   background-size: cover;
   background-repeat: no-repeat;
@@ -73,5 +62,17 @@ section {
 }
 
 .container {
-  padding: 120px 178px 0;
+  padding: clamp(80px, 11vh, 120px) min(9vw, 178px) 0;
+
+  @media (max-width: $tablet) {
+    padding: 0;
+  }
+  
+  @media (max-width: $mobile) {
+    padding: 0 15px;
+  }
+}
+
+.noScroll {
+  overflow: hidden;
 }

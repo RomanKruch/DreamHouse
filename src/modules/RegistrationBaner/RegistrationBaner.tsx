@@ -1,9 +1,13 @@
 import Baner from '../../components/Baner/Baner';
 import RegForm from '../../components/RegForm/RegForm';
 
-const RegistrationBaner = () => {
+interface IProps {
+  className?: string;
+}
+
+const RegistrationBaner = ({ className = '' }: IProps) => {
   return (
-    <Baner>
+    <Baner className={className}>
       <RegForm />
     </Baner>
   );
