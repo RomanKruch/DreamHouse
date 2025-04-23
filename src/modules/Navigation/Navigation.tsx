@@ -1,17 +1,34 @@
 import './Navigation.scss';
 
-const arr = [1, 2, 3, 4, 5, 6];
+const sectionIds = ['1', '2', '3', '4', '5', '6'];
 
-const Navigation = () => {
+interface IProps {
+  activeSection: string;
+}
+
+const Navigation = ({ activeSection }: IProps) => {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <nav className="navigation">
-      <ul className="navigation_list">
-        {arr.map(i => (
-          <li key={i}>
-            <a href={`#${i}`} className="navigation_link"><span></span></a>
-          </li>
-        ))}
-      </ul>
+      {sectionIds.map(id => (
+        <button
+          key={id}
+          className={`navigation_btn ${
+            activeSection === id ? 'navigation_btn-active' : ''
+          }`}
+          onClick={() => scrollToSection(id)}
+        >
+          <span></span>
+        </button>
+        // <li key={i}>
+        //   <a href={`#${i}`} className="navigation_link"><span></span></a>
+        // </li>
+      ))}
     </nav>
   );
 };

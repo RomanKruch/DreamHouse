@@ -6,7 +6,7 @@ const Section1 = () => {
   return (
     <section className="section1" id="1">
       <img src={title} alt="title" className="section1_title" />
-      <RegistrationBaner className='section1_baner'/>
+      <RegistrationBaner className="section1_baner" />
     </section>
   );
 };

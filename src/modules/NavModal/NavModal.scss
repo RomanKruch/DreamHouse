@@ -4,19 +4,19 @@
 .navModal {
   &_list {
     display: flex;
-    margin: 0 min(9vw, 178px);
+    padding: clamp(80px, 12vh, 120px) min(9vw, 178px) 0;
+    height: 100%;
 
     @media (max-width: $tablet) {
       flex-direction: column;
       height: 100%;
-      margin: 0;
-      padding-top: clamp(80px, 11vh, 120px);
+      padding: clamp(80px, 12vh, 120px) 0 0;
     }
   }
 
   &_item {
     flex: 1;
-    height: 100vh;
+    // padding-bottom: clamp(80px, 12vh, 120px);
 
     @media (max-width: $tablet) {
       width: 100vw;

@@ -2,21 +2,28 @@
 @import '../../variables';
 
 .section6 {
-  // backdrop-filter: blur(15px); // don`t work:(
-
   @include sectionBackground('../../assets/bg/bg-5.jpg', 0.6);
 
   &_list {
-    margin-left: 180px;
-
     display: grid;
-    grid-template-columns: 580px 420px 360px;
-    grid-template-rows: 729px 380px;
+    width: fit-content;
+    // grid-template-columns: 580px 420px 360px;
+    grid-template-columns: 35vw 20vw 23vw;
+    grid-template-rows: 55vh 25vh;
+    margin: 0 auto;
+
+    & > * {
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+    }
   }
 
   &_item {
     position: relative;
     @include customBorders(0);
+
+    // aspect-ratio: 1 / 1;
 
     cursor: pointer;
 
@@ -42,16 +49,38 @@
       }
     }
 
-    &:nth-last-child(n + 3) {
+    &:nth-child(1) {
+      width: 85%;
+      height: 80%;
+      justify-self: flex-end;
+      align-self: flex-end;
+    }
+
+    &:nth-child(3) {
+      width: 70%;
       align-self: flex-end;
     }
 
     &:nth-child(4) {
+      width: 36%;
       justify-self: flex-end;
     }
 
+    &:nth-child(5) {
+      width: 80%;
+    }
+
+    // &:nth-last-child(n + 3) {
+    //   align-self: flex-end;
+    // }
+
+    // &:nth-child(4) {
+    //   justify-self: flex-end;
+    // }
+
     &_img {
-      height: inherit;
+      width: 100%;
+      height: 100%;
     }
 
     &_overlay {
@@ -71,11 +100,12 @@
     }
 
     &_title {
-      width: 252px;
+      // width: 252px;
+      padding: 0 30px;
 
       font-family: 'Open Sans', sans-serif;
       font-weight: 600;
-      font-size: 30px;
+      font-size: clamp(14px, 1.5vw, 30px);
       line-height: 40px;
       text-transform: uppercase;
       text-align: center;

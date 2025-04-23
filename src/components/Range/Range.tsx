@@ -80,9 +80,6 @@ const Range = ({ max, value, setValue }: IProps) => {
     const width = touch.pageX - centerCords[0];
     const height = touch.pageY - centerCords[1];
 
-    console.log(centerCords);
-    console.log(height);
-
     let deg = Math.atan(Math.abs(height) / Math.abs(width)) * 57.295779;
 
     if (height < 0 && width > 0) {

@@ -20,6 +20,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   position: relative;
   color: #fff;
+  scroll-behavior: smooth;
+
+  overflow-x: hidden;
 }
 
 img {
@@ -62,12 +65,12 @@ section {
 }
 
 .container {
-  padding: clamp(80px, 11vh, 120px) min(9vw, 178px) 0;
+  padding: clamp(80px, 12vh, 120px) min(9vw, 178px) 0;
 
   @media (max-width: $tablet) {
     padding: 0;
   }
-  
+
   @media (max-width: $mobile) {
     padding: 0 15px;
   }
