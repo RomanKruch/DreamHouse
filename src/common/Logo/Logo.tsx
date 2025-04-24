@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
 interface IProps {
@@ -6,9 +7,9 @@ interface IProps {
 
 const Logo = ({ className = '' }: IProps) => {
   return (
-    <a className={className}>
+    <NavLink to="/" className={className}>
       <img src={logo} alt="logo" width={50} height={57} />
-    </a>
+    </NavLink>
   );
 };
 

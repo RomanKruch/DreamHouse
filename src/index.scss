@@ -46,6 +46,10 @@ button {
   border: 0;
   background-color: transparent;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 input {

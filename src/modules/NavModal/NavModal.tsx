@@ -1,59 +1,80 @@
+import { useNavigate } from 'react-router-dom';
 import Modal from '../../common/Modal/Modal';
+import createActiveClass from '../../helpers/createActiveClassName';
 import './NavModal.scss';
 
 interface IProps {
-  isOpen: boolean;
-  setIsOpen: (v: boolean) => void;
+  activeSectionId: string;
 }
 
-const NavModal = ({ isOpen, setIsOpen }: IProps) => {
-  if (!isOpen) {
-    return <></>;
-  }
+const NavModal = ({ activeSectionId }: IProps) => {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navigate = useNavigate();
+
+  const onClick = (id: string) => {
+    return () => {
+      scrollToSection(id);
+      navigate('/')
+    };
+  };
 
   return (
     <Modal>
       <ul className="navModal_list">
         <li className="navModal_item">
-          <a
-            href="#3"
-            className="navModal_link"
-            onClick={() => setIsOpen(false)}
+          <button
+            className={createActiveClass(
+              'navModal_link',
+              activeSectionId === '3',
+            )}
+            onClick={onClick('3')}
           >
             styles of rennovation
-          </a>
+          </button>
         </li>
         <li className="navModal_item">
-          <a
-            href="#4"
-            className="navModal_link"
-            onClick={() => setIsOpen(false)}
+          <button
+            className={createActiveClass(
+              'navModal_link',
+              activeSectionId === '4',
+            )}
+            onClick={onClick('4')}
           >
             Costs
-          </a>
+          </button>
         </li>
         <li className="navModal_item">
-          <a
-            href="#5"
-            className="navModal_link"
-            onClick={() => setIsOpen(false)}
+          <button
+            className={createActiveClass(
+              'navModal_link',
+              activeSectionId === '5',
+            )}
+            onClick={onClick('5')}
           >
             5 steps to DREAM HOUSE
-          </a>
+          </button>
         </li>
         <li className="navModal_item">
-          <a
-            href="#6"
-            className="navModal_link"
-            onClick={() => setIsOpen(false)}
+          <button
+            className={createActiveClass(
+              'navModal_link',
+              activeSectionId === '6',
+            )}
+            onClick={onClick('6')}
           >
             additional services
-          </a>
+          </button>
         </li>
         <li className="navModal_item">
-          <a href="" className="navModal_link" onClick={() => setIsOpen(false)}>
+          <button className="navModal_link" onClick={() => {}}>
             BLOG
-          </a>
+          </button>
         </li>
       </ul>
     </Modal>

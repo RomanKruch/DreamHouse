@@ -19,7 +19,7 @@
   @media (max-width: $tablet) {
     width: 100vw;
     left: 0;
-    
+
     padding-inline: 20px;
 
     position: absolute;
@@ -88,18 +88,6 @@
     }
   }
 
-  &_phone {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.1em;
-    color: $white;
-
-    @media (max-width: $tablet) {
-      display: none;
-    }
-  }
 
   &_call {
     &_wrap {
@@ -135,7 +123,7 @@
       place-items: center;
       position: relative;
 
-      transition: background 0.3s;
+      transition: all 0.3s;
 
       &:hover {
         background: rgba($white, 0.25);
@@ -154,7 +142,7 @@
         border-radius: 50%;
 
         opacity: 0;
-        transition: opacity 0.3s;
+        transition: all 0.3s;
       }
 
       &::after {

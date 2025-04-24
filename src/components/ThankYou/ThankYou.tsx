@@ -1,11 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import BtnWithArrow from '../../common/BtnWithArrow/BtnWithArrow';
 import './ThankYou.scss';
 
-interface IProps {
-  setIsOpen: (v: boolean) => void;
-}
+const ThankYou = () => {
+  const navigate = useNavigate();
 
-const ThankYou = ({ setIsOpen }: IProps) => {
   return (
     <div className="thankYou">
       <h2 className="thankYou_title">thank you for your application!</h2>
@@ -13,7 +12,7 @@ const ThankYou = ({ setIsOpen }: IProps) => {
       <BtnWithArrow
         text="return to the main page"
         white={true}
-        onClick={() => setIsOpen(false)}
+        onClick={() => navigate('/')}
       />
     </div>
   );

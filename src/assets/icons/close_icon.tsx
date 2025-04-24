@@ -13,7 +13,6 @@ const CloseIcon = () => {
         x2="1.04158"
         y2="1.70676"
         stroke="black"
-        strokeOpacity="0.15"
         strokeWidth="2"
       />
       <line
@@ -22,7 +21,6 @@ const CloseIcon = () => {
         x2="24.2771"
         y2="1.52302"
         stroke="black"
-        strokeOpacity="0.15"
         strokeWidth="2"
       />
     </svg>

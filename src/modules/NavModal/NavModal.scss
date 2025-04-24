@@ -25,6 +25,7 @@
   }
 
   &_link {
+    width: 100%;
     height: 100%;
     padding: 0 5px;
 
@@ -44,12 +45,17 @@
     @include customBorders(0);
 
     &:hover {
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.4);
       @include customBorders(1);
     }
 
     @media (max-width: $mobile) {
       font-size: 18px;
+    }
+
+    &-active {
+      background: rgba(0, 0, 0, 0.4);
+      @include customBorders(1);
     }
   }
 }
