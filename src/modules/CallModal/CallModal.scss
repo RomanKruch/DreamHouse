@@ -1,0 +1,8 @@
+@import '../../variables';
+
+.call_form {
+  padding: 60px 30px;
+  border-radius: 20px;
+  background-color: rgba($white, 0.15);
+  backdrop-filter: blur(15px);
+}
