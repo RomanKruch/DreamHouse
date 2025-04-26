@@ -44,7 +44,7 @@ const Section5 = () => {
           </div>
         </div>
       </div>
-      <RegistrationBaner />
+      <RegistrationBaner className='section5_baner'/>
     </section>
   );
 };

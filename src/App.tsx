@@ -39,7 +39,7 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  useSectionScroll(sectionIds);
+  // useSectionScroll(sectionIds);
 
   return (
     <>

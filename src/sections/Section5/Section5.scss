@@ -4,8 +4,13 @@
 .section5 {
   @include sectionBackground('../../assets/bg/bg-5.jpg', 0.6);
 
+  @media (max-width: $tablet) {
+    height: 720px;
+    padding-top: 50px;
+  }
+
   &_title {
-    width: 325px;
+    // width: 325px;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -14,15 +19,34 @@
     letter-spacing: 0.3em;
     color: $white;
 
-    margin: 188px 0 13px 424px;
+    width: fit-content;
+    margin: min(160px, 12vh) auto 25px;
+
+    @media (max-width: $tablet) {
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+
+      margin: 0 auto 50px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
   }
 
   &_wrap {
-    margin-left: 105px;
+    margin-left: min(100px, 5vw);
 
     display: flex;
     align-items: center;
-    gap: 85px;
+    gap: 65px;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      margin: 0;
+      gap: 30px;
+    }
   }
 
   &_control {
@@ -42,6 +66,11 @@
       font-size: 64px;
       line-height: 70px;
       color: $white;
+
+      @media (max-width: $tablet) {
+        font-size: 56px;
+        line-height: 62px;
+      }
     }
 
     &_btn_wrap {
@@ -114,9 +143,16 @@
 
   &_details {
     display: grid;
-    grid-template-columns: 80px 300px 25px 471px;
+    grid-template-columns: 80px 1fr 25px 2fr;
     align-items: center;
-    gap: 55px;
+    gap: 30px;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+
+      text-align: center;
+    }
 
     &_title {
       font-family: 'Open Sans';
@@ -125,6 +161,15 @@
       line-height: 49px;
       text-transform: uppercase;
       color: $white;
+
+      @media (max-width: $tablet) {
+        font-size: 28px;
+        line-height: 32px;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 24px;
+      }
     }
 
     &_description {
@@ -134,15 +179,35 @@
       line-height: 30px;
       text-transform: uppercase;
       color: $white;
+
+      @media (max-width: $tablet) {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
 
     &_arrow {
       height: 25px;
-      
+
       border-top: 1px solid $white;
       border-right: 1px solid $white;
-      
+
       transform: rotate(45deg);
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &_baner {
+    @media (max-width: $tablet) {
+      display: none;
     }
   }
 }
