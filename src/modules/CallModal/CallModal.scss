@@ -10,4 +10,8 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (max-width: $mobile) {
+    padding: 30px 20px;
+  }
 }

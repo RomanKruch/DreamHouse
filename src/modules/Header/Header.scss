@@ -88,7 +88,6 @@
     }
   }
 
-
   &_call {
     &_wrap {
       display: flex;
@@ -169,6 +168,22 @@
         &::after {
           background-color: $white;
           opacity: 1;
+        }
+      }
+
+      @media (max-width: $mobile) {
+        width: 30px;
+        height: 30px;
+
+        &::after {
+          width: 45px;
+          height: 45px;
+        }
+
+        &::before {
+          width: 60px;
+          height: 60px;
+          transition-delay: 0;
         }
       }
     }

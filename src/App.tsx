@@ -7,7 +7,7 @@ import CallModal from './modules/CallModal/CallModal';
 // import RegistrationBaner from './components/RegistrationBaner/RegistrationBaner';
 
 import NavModal from './modules/NavModal/NavModal';
-import { useSectionScroll } from './hooks/useSectionScroll';
+// import { useSectionScroll } from './hooks/useSectionScroll';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 

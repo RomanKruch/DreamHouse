@@ -27,6 +27,11 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
     }
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr);
+    }
   }
 
   &_item {
@@ -35,24 +40,28 @@
     cursor: pointer;
 
     &:hover {
-      @include customBorders(1);
+      @media (min-width: $tablet) {
+        @include customBorders(1);
 
-      .section6_item_overlay {
-        background: transparent;
-      }
-      .section6_item_title {
-        opacity: 1;
+        .section6_item_overlay {
+          background: transparent;
+        }
+        .section6_item_title {
+          opacity: 1;
+        }
       }
     }
 
     &-active {
-      @include customBorders(1);
+      @media (min-width: $tablet) {
+        @include customBorders(1);
 
-      .section6_item_overlay {
-        background: transparent;
-      }
-      .section6_item_title {
-        opacity: 1;
+        .section6_item_overlay {
+          background: transparent;
+        }
+        .section6_item_title {
+          opacity: 1;
+        }
       }
     }
 
@@ -83,23 +92,16 @@
       @include customBorders(1);
       aspect-ratio: 1 / 1;
 
-      .section6_item_overlay {
-        background: rgba(0, 0, 0, 0.2);
-      }
-
-      &:hover {
-        .section6_item_overlay {
-          background: rgba(0, 0, 0, 0.2);
-        }
-      }
-
-      .section6_item_title {
-        opacity: 1;
-      }
-
       &:last-child {
         grid-column: 1 / -1;
         aspect-ratio: 2 / 1;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      &:last-child {
+        grid-column: inherit;
+        aspect-ratio: 1 / 1;
       }
     }
 
@@ -122,10 +124,13 @@
       display: grid;
       place-items: center;
       transition: background 0.3s;
+
+      @media (max-width: $tablet) {
+        background: rgba(0, 0, 0, 0.2);
+      }
     }
 
     &_title {
-      // width: 252px;
       padding: 0 15px;
 
       font-family: 'Open Sans', sans-serif;
@@ -139,6 +144,7 @@
       transition: opacity 0.3s;
 
       @media (max-width: $tablet) {
+        opacity: 1;
         font-size: 18px;
       }
 
