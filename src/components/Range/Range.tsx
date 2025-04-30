@@ -2,8 +2,6 @@ import CircleProgressBar from '../../common/CircleProgressBar/CircleProgressBar'
 import './Range.scss';
 import { useState, useEffect } from 'react';
 
-const body = document.querySelector('body')
-
 interface IProps {
   max: number;
   value: number;
@@ -12,10 +10,8 @@ interface IProps {
 
 const Range = ({ max, value, setValue }: IProps) => {
   const valueInDeg = (1 / max) * 360;
-  const [centerCords, setCenterCords] = useState<[number, number]>([0,0])
+  const [centerCords, setCenterCords] = useState<[number, number]>([0, 0]);
   const id = 'progress1';
-
-  // const isTouch = window.innerWidth < 1024;
 
   useEffect(() => {
     const circleRef = document.getElementById(id) as Element;
@@ -24,7 +20,7 @@ const Range = ({ max, value, setValue }: IProps) => {
     const centerX = circleRect.x + 117.5;
     const centerY = circleRect.y + window.scrollY + 117.5;
 
-    setCenterCords([centerX, centerY])
+    setCenterCords([centerX, centerY]);
   }, []);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,7 +54,7 @@ const Range = ({ max, value, setValue }: IProps) => {
     }
 
     if (deg >= 360) {
-        deg = 360;
+      deg = 360;
     }
 
     setValue(Math.round(deg / valueInDeg));
@@ -75,7 +71,8 @@ const Range = ({ max, value, setValue }: IProps) => {
   };
 
   const onTouchMove = (e: TouchEvent) => {
-    const [touch] = e.changedTouches
+    e.preventDefault();
+    const [touch] = e.changedTouches;
 
     const width = touch.pageX - centerCords[0];
     const height = touch.pageY - centerCords[1];
@@ -93,7 +90,7 @@ const Range = ({ max, value, setValue }: IProps) => {
     }
 
     if (deg >= 360) {
-        deg = 360;
+      deg = 360;
     }
 
     setValue(Math.round(deg / valueInDeg));
@@ -101,15 +98,13 @@ const Range = ({ max, value, setValue }: IProps) => {
 
   const onTouchUp = () => {
     window.removeEventListener('touchmove', onTouchMove);
-    body?.classList.remove('noScroll');
     window.removeEventListener('touchend', onTouchUp);
   };
 
   const onRangeTouch = () => {
-    body?.classList.add('noScroll');
-    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('touchmove', onTouchMove, { passive: false });
     window.addEventListener('touchend', onTouchUp);
-  }
+  };
 
   return (
     <div className="range">
@@ -126,7 +121,11 @@ const Range = ({ max, value, setValue }: IProps) => {
           className="range_btn_wrap"
           style={{ rotate: `${value * valueInDeg}deg` }}
         >
-          <button className="range_btn" onMouseDown={onRange} onTouchStart={onRangeTouch}></button>
+          <button
+            className="range_btn"
+            onMouseDown={onRange}
+            onTouchStart={onRangeTouch}
+          ></button>
         </div>
       </div>
     </div>
