@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CircleProgressBar from '../../common/CircleProgressBar/CircleProgressBar';
 import './Section5.scss';
 import createActiveClass from '../../helpers/createActiveClassName';
@@ -8,6 +8,24 @@ import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner
 const Section5 = () => {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const activeStep = steps[activeStepIndex];
+  const intervalRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+
+    intervalRef.current = setInterval(() => {
+      setActiveStepIndex(s => (s < 5 ? s + 1 : 0));
+    }, 1500);
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  const onClick = (i: number) => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    setActiveStepIndex(i);
+  };
 
   return (
     <section className="section5" id="5">
@@ -28,7 +46,7 @@ const Section5 = () => {
                     'section5_control_btn',
                     activeStepIndex === i,
                   )}
-                  onClick={() => setActiveStepIndex(i)}
+                  onClick={() => onClick(i)}
                 ></button>
               </div>
             ))}
@@ -44,7 +62,7 @@ const Section5 = () => {
           </div>
         </div>
       </div>
-      <RegistrationBaner className='section5_baner'/>
+      <RegistrationBaner className="section5_baner" />
     </section>
   );
 };

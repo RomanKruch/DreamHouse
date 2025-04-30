@@ -11,7 +11,7 @@ import NavModal from './modules/NavModal/NavModal';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 
-const sectionIds = ['1', '2', '3', '4', '6'];
+const sectionIds = ['1', '2', '3', '4', '5', '6'];
 
 function App() {
   const [activeSection, setActiveSection] = useState<string>('1');

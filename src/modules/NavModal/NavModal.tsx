@@ -20,7 +20,7 @@ const NavModal = ({ activeSectionId }: IProps) => {
   const onClick = (id: string) => {
     return () => {
       scrollToSection(id);
-      navigate('/')
+      navigate('/');
     };
   };
 
@@ -72,9 +72,7 @@ const NavModal = ({ activeSectionId }: IProps) => {
           </button>
         </li>
         <li className="navModal_item">
-          <button className="navModal_link" onClick={() => {}}>
-            BLOG
-          </button>
+          <button className="navModal_link">BLOG</button>
         </li>
       </ul>
     </Modal>

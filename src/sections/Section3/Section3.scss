@@ -66,6 +66,7 @@
         border-right: 2px solid #999;
       }
       .section3_item_wrap {
+        opacity: 1;
         width: min(480px, 30vw);
         padding-left: 50px;
       }
@@ -128,6 +129,7 @@
 
     &_wrap {
       width: 0;
+      opacity: 0;
       overflow: hidden;
       transition: all 0.5s;
 

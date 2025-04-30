@@ -2,28 +2,35 @@
 
 .thankYou {
   &_title {
-    width: 500px;
+    max-width: 500px;
     margin-inline: auto;
 
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 36px;
-    line-height: 49px;
     text-transform: uppercase;
     text-align: center;
     color: $white;
 
     margin-bottom: 35px;
+
+    @media (max-width: $tablet) {
+      font-size: 30px;
+    }
   }
 
   &_subtitle {
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 16px;
-    line-height: 30px;
     text-align: center;
     color: $white;
 
     margin-bottom: 250px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 200px;
+      font-size: 14px;
+    }
   }
 }
