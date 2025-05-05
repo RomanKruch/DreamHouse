@@ -3,6 +3,7 @@ import ArrowIcon from '../../assets/icons/ArrowIcon/ArrowIcon';
 import Section2Item from './Section2Item';
 import './Section2.scss';
 import data from '../../data/section2';
+import { NavLink } from 'react-router-dom';
 
 const Section2 = () => {
   return (
@@ -20,9 +21,9 @@ const Section2 = () => {
           ))}
         </ul>
 
-        <a className="section2_link">
+        <NavLink to="about" className="section2_link">
           more info about us <ArrowIcon />
-        </a>
+        </NavLink>
       </div>
 
       {/* <RegistrationBaner /> */}

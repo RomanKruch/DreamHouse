@@ -10,6 +10,7 @@ import NavModal from './modules/NavModal/NavModal';
 // import { useSectionScroll } from './hooks/useSectionScroll';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import AboutModal from './pages/AboutPage/AboutModal';
 
 const sectionIds = ['1', '2', '3', '4', '5', '6'];
 
@@ -54,6 +55,7 @@ function App() {
             element={<NavModal activeSectionId={activeSection} />}
           />
           <Route path="call" element={<CallModal />} />
+          <Route path="about" element={<AboutModal />} />
         </Route>
       </Routes>
     </>

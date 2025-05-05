@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Modal from '../../common/Modal/Modal';
 import createActiveClass from '../../helpers/createActiveClassName';
 import './NavModal.scss';
@@ -72,7 +72,9 @@ const NavModal = ({ activeSectionId }: IProps) => {
           </button>
         </li>
         <li className="navModal_item">
-          <button className="navModal_link">BLOG</button>
+          <NavLink to="/about" className="navModal_link">
+            About Us
+          </NavLink>
         </li>
       </ul>
     </Modal>

@@ -1,0 +1,41 @@
+// @import '../../mixins';
+@import '../../variables';
+
+.aboutModal {
+  max-width: 700px;
+  text-align: center;
+
+  &_title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+
+    margin-bottom: 35px;
+
+    @media (max-width: $tablet) {
+      font-size: 30px;
+    }
+  }
+
+  &_content_wrap {
+    margin-bottom: 60px;
+  }
+
+  &_description {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: $white;
+
+    margin-bottom: 25px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+  }
+}
