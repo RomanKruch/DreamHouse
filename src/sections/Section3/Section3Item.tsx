@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import ArrowIcon from '../../assets/icons/ArrowIcon/ArrowIcon';
 import createActiveClass from '../../helpers/createActiveClassName';
 
@@ -26,10 +27,10 @@ const Section3Item = ({
       <h3 className="section3_item_title">{title}</h3>
       <div className="section3_item_wrap">
         <p className="section3_item_description">{description}</p>
-        <a className="section3_item_link">
+        <NavLink to="/gallery" className="section3_item_link">
           gallery
           <ArrowIcon />
-        </a>
+        </NavLink>
         <a className="section3_item_link">
           list of services
           <ArrowIcon />

@@ -11,6 +11,7 @@ import NavModal from './modules/NavModal/NavModal';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutModal from './pages/AboutPage/AboutModal';
+import GalleryPage from './pages/GalleryPage/GalleryPage';
 
 const sectionIds = ['1', '2', '3', '4', '5', '6'];
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="call" element={<CallModal />} />
           <Route path="about" element={<AboutModal />} />
         </Route>
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </>
   );

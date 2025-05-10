@@ -1,0 +1,12 @@
+@import '../../mixins';
+@import '../../variables';
+
+.galleryItem {
+  @include sectionBackground('../../assets/gallery/elite_1.jpg', 0.6);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}

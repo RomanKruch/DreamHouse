@@ -3,7 +3,7 @@
 
 .section1 {
   @include sectionBackground('../../assets/bg/bg-1.jpg', 0.45);
-  padding: 24vh 0 0 16.5vw;
+  padding: 20vh 0 0 15vw;
 
   @media (max-width: $tablet) {
     padding: 140px 40px 0;
@@ -16,7 +16,7 @@
   }
 
   &_title {
-    width: min(716px, 100%);
+    width: min(600px, 100%);
 
     // position: relative;
     // top: 260px;
