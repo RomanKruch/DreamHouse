@@ -3,7 +3,8 @@
 .galleryPagination {
   width: 40vw;
   position: absolute;
-  bottom: 0;
+  z-index: $middle;
+  bottom: 10px;
   left: 15%;
   padding: 25px 0;
 

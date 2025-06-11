@@ -1,25 +1,34 @@
 import './GalleryPagination.scss';
+import type { Swiper as SwiperType } from 'swiper';
 
 interface IProps {
   currentSlide: number;
   totalSlides: number;
   setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
+  swiperRef: React.MutableRefObject<SwiperType | null>;
 }
 
 const GalleryPagination = ({
   currentSlide,
   setCurrentSlide,
   totalSlides,
+  swiperRef,
 }: IProps) => {
   const onPrev = () => {
-    if (currentSlide > 1) {
-      setCurrentSlide(s => s - 1);
+    if (currentSlide > 0) {
+      setCurrentSlide(s => {
+        swiperRef.current?.slideTo(s - 1);
+        return s - 1;
+      });
     }
   };
 
   const onNext = () => {
-    if (currentSlide + 1 <= totalSlides) {
-      setCurrentSlide(s => s + 1);
+    if (currentSlide <= totalSlides - 2) {
+      setCurrentSlide(s => {
+        swiperRef.current?.slideTo(s + 1);
+        return s + 1;
+      });
     }
   };
 
@@ -31,7 +40,7 @@ const GalleryPagination = ({
       </button>
       <div className="galleryPagination_counter">
         <p className="galleryPagination_counter_number galleryPagination_counter_number-current">
-          {currentSlide.toString().padStart(2, '0')}
+          {(currentSlide + 1).toString().padStart(2, '0')}
         </p>
         <span className="galleryPagination_counter_line"></span>
         <p className="galleryPagination_counter_number">

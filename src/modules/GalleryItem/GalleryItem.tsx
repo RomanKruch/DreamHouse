@@ -1,55 +1,18 @@
 import GalleryLabel from '../../components/GalleryLabel/GalleryLabel';
-import RegistrationBaner from '../RegistrationBaner/RegistrationBaner';
+import { IGalleryItem } from '../../pages/GalleryPage/GalleryPage';
+import { sectionBackground } from '../../helpers/sectionBackground';
 import './GalleryItem.scss';
 
 interface IProps {
-  title: string;
-  position: {
-    top: string;
-    left: string;
-  };
-  view: 'common' | 'mirrored';
-  orientation: 'common' | 'inverse';
+  labels: IGalleryItem[];
+  bg: string;
 }
 
-const services: IProps[] = [
-  {
-    title: 'Dismantling and construction of interior partitions',
-    position: { top: '25%', left: '20%' },
-    view: 'common',
-    orientation: 'common',
-  },
-  {
-    title: 'Installation of interior doors',
-    position: { top: '15%', left: '40%' },
-    view: 'common',
-    orientation: 'common',
-  },
-  {
-    title: 'Aligning corners to 90 degrees',
-    position: { top: '40%', left: '40%' },
-    view: 'mirrored',
-    orientation: 'inverse',
-  },
-  {
-    title: 'Post-renovation cleaning',
-    position: { top: '50%', left: '60%' },
-    view: 'mirrored',
-    orientation: 'common',
-  },
-  {
-    title: 'Laminate flooring installation over underlayment',
-    position: { top: '65%', left: '30%' },
-    view: 'mirrored',
-    orientation: 'common',
-  },
-];
-
-const GalleryItem = () => {
+const GalleryItem = ({ labels, bg }: IProps) => {
   return (
-    <div className="galleryItem">
+    <div className="galleryItem" style={sectionBackground(bg, 0.6)}>
       <div className="container">
-        {services.map(item => (
+        {labels.map(item => (
           <GalleryLabel
             title={item.title}
             position={item.position}
@@ -58,8 +21,6 @@ const GalleryItem = () => {
             orientation={item.orientation}
           />
         ))}
-
-        <RegistrationBaner />
       </div>
     </div>
   );

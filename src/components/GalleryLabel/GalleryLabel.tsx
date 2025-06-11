@@ -1,17 +1,8 @@
 import createClassName from '../../helpers/createClassName';
+import { IGalleryItem } from '../../pages/GalleryPage/GalleryPage';
 import './GalleryLabel.scss';
 
-interface IProps {
-  title: string;
-  position: {
-    top: string;
-    left: string;
-  };
-  view: 'common' | 'mirrored';
-  orientation: 'common' | 'inverse';
-}
-
-const GalleryLabel = ({ title, position, orientation, view }: IProps) => {
+const GalleryLabel = ({ title, position, orientation, view }: IGalleryItem) => {
   return (
     <div className="galleryLabel" style={position}>
       {orientation === 'common' ? (

@@ -1,0 +1,15 @@
+@import '../../variables';
+
+.gallery_link {
+  position: absolute;
+  width: fit-content;
+  z-index: $middle;
+  top: calc(clamp(80px, 11vh, 120px) + 30px);
+  right: 150px;
+  font-size: 16px;
+}
+
+.gallery_swiper {
+  width: 100%;
+  height: 100%;
+}
