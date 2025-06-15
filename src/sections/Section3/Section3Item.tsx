@@ -22,12 +22,11 @@ const Section3Item = ({
     <li
       className={createActiveClass('section3_item', isActive)}
       onClick={() => onClick(index)}
-      // onTouchStart={() => onClick(index)}
     >
       <h3 className="section3_item_title">{title}</h3>
       <div className="section3_item_wrap">
         <p className="section3_item_description">{description}</p>
-        <NavLink to="/gallery" className="section3_item_link">
+        <NavLink to={`/gallery?style=${title}`}  className="section3_item_link">
           gallery
           <ArrowIcon />
         </NavLink>

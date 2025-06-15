@@ -16,7 +16,7 @@ const GalleryItem = ({ labels, bg }: IProps) => {
           <GalleryLabel
             title={item.title}
             position={item.position}
-            key={item.title}
+            key={`${item.title}${item.position.left}`}
             view={item.view}
             orientation={item.orientation}
           />
