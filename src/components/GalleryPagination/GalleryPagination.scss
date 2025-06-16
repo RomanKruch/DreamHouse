@@ -12,6 +12,16 @@
   align-items: center;
   gap: 15px;
 
+  @media (max-width: $tablet) {
+    width: 100%;
+    left: 0;
+    padding: 25px 100px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 25px;
+  }
+
   &_counter {
     width: 160px;
     height: 115px;
@@ -19,6 +29,11 @@
 
     display: grid;
     place-items: center;
+
+    @media (max-width: $mobile) {
+      width: 130px;
+      height: 100px;
+    }
 
     &_number {
       font-family: 'Bruno Ace';
@@ -38,6 +53,19 @@
         left: inherit;
         right: 0;
       }
+
+      @media (max-width: $mobile) {
+        left: 20px;
+        bottom: 5px;
+        font-size: 20px;
+
+        &-current {
+          top: 0;
+          left: inherit;
+          right: 0;
+          font-size: 36px;
+        }
+      }
     }
 
     &_line {
@@ -47,6 +75,10 @@
       background: rgba(#fff, 0.4);
       rotate: 30deg;
       transform-origin: center;
+
+      @media (max-width: $mobile) {
+        width: 140px;
+      }
     }
   }
 
@@ -68,6 +100,7 @@
       border-top: #fff 2px solid;
       border-left: #fff 2px solid;
       rotate: -45deg;
+      flex-shrink: 0;
 
       &:nth-child(2) {
         rotate: 135deg;

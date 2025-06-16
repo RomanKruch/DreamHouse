@@ -8,7 +8,7 @@ import CallModal from './modules/CallModal/CallModal';
 
 import NavModal from './modules/NavModal/NavModal';
 // import { useSectionScroll } from './hooks/useSectionScroll';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutModal from './pages/AboutPage/AboutModal';
 import GalleryPage from './pages/GalleryPage/GalleryPage';
@@ -18,7 +18,13 @@ const sectionIds = ['1', '2', '3', '4', '5', '6'];
 function App() {
   const [activeSection, setActiveSection] = useState<string>('1');
 
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   useEffect(() => {
+    if (!isHome) return;
+    setActiveSection('1');
+
     const observer = new IntersectionObserver(
       entries => {
         const visible = entries.find(entry => entry.isIntersecting);
@@ -39,7 +45,7 @@ function App() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
   // useSectionScroll(sectionIds);
 
@@ -47,7 +53,7 @@ function App() {
     <>
       <AsideBar />
       <Header />
-      <Navigation activeSection={activeSection} />
+      {isHome && <Navigation activeSection={activeSection} />}
 
       <Routes>
         <Route path="/" element={<HomePage />}>

@@ -2,16 +2,17 @@ import { useState, useRef } from 'react';
 import GalleryPagination from '../../components/GalleryPagination/GalleryPagination';
 import GalleryItem from '../../modules/GalleryItem/GalleryItem';
 import BtnWithArrow from '../../common/BtnWithArrow/BtnWithArrow';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 import { GalleryData } from './data';
 import './GalleryPage.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+// import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner';
+import CloseIcon from '../../assets/icons/close_icon';
 
 export interface IGalleryItem {
   title: string;
@@ -47,20 +48,24 @@ const GalleryPage = () => {
 
   return (
     <main>
-      <BtnWithArrow
-        text="back to styles"
-        white={true}
-        onClick={() => navigate('/')}
-        className="gallery_link"
-      />
+      {window.innerWidth > 1023 ? (
+        <BtnWithArrow
+          text="back to styles"
+          white={true}
+          onClick={() => navigate('/')}
+          className="gallery_link"
+        />
+      ) : (
+        <NavLink to="/" className="gallery_link">
+          <CloseIcon />
+        </NavLink>
+      )}
 
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
         onSwiper={swiper => (swiperRef.current = swiper)}
         onSlideChange={swiper => setCurrentSlide(swiper.activeIndex)}
-        modules={[Autoplay]}
-        autoplay={{ delay: 3000, disableOnInteraction: true }}
         className="gallery_swiper"
       >
         {currentData.map((slide, index) => (
@@ -77,7 +82,7 @@ const GalleryPage = () => {
         swiperRef={swiperRef}
       />
 
-      <RegistrationBaner />
+      <RegistrationBaner className="gallery_baner" />
     </main>
   );
 };

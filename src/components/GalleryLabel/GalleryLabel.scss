@@ -5,6 +5,17 @@
   width: 250px;
   position: absolute;
 
+  @media (max-width: $tablet) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
   &_title {
     font-family: 'Open Sans';
     font-weight: 600;
@@ -19,6 +30,20 @@
       margin-bottom: 0;
       padding: 0 30% 0 0;
     }
+
+    @media (max-width: $tablet) {
+      padding-left: 0;
+      margin-bottom: 0;
+      opacity: 0;
+      transform: scaleX(0.5);
+      transform-origin: left center;
+      transition: all 0.3s;
+
+      &-active {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
   }
 
   &_btn {
@@ -32,6 +57,7 @@
 
     display: grid;
     place-items: center;
+    transition: all 0.3s;
 
     &::after,
     &::before {
@@ -40,8 +66,7 @@
       border-radius: 50%;
 
       position: absolute;
-      opacity: 1;
-      transition: opacity 0.3s;
+      transition: all 0.3s;
     }
 
     &::after {
@@ -58,6 +83,34 @@
       border: 1px solid rgba($gold, 0.2);
 
       transition-delay: 0.15s;
+    }
+
+    @media (max-width: $tablet) {
+      background: #cacaca;
+
+      &:hover {
+        background: $gold;
+      }
+
+      &::after {
+        border: 1px solid rgba(#cacaca, 0.5);
+      }
+
+      &::before {
+        border: 1px solid rgba(#cacaca, 0.2);
+      }
+
+      &-active {
+        background: $gold;
+
+        &::after {
+          border: 1px solid rgba($gold, 0.5);
+        }
+
+        &::before {
+          border: 1px solid rgba($gold, 0.2);
+        }
+      }
     }
   }
 

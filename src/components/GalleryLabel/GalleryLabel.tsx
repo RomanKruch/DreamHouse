@@ -2,8 +2,20 @@ import createClassName from '../../helpers/createClassName';
 import { IGalleryItem } from '../../pages/GalleryPage/GalleryPage';
 import './GalleryLabel.scss';
 
-const GalleryLabel = ({ title, position, orientation, view }: IGalleryItem) => {
-  return (
+interface IProps extends IGalleryItem {
+  onLabelClick: () => void;
+  isActive: boolean;
+}
+
+const GalleryLabel = ({
+  title,
+  position,
+  orientation,
+  view,
+  onLabelClick,
+  isActive,
+}: IProps) => {
+  return window.innerWidth > 1023 ? (
     <div className="galleryLabel" style={position}>
       {orientation === 'common' ? (
         <>
@@ -54,6 +66,18 @@ const GalleryLabel = ({ title, position, orientation, view }: IGalleryItem) => {
           </p>
         </>
       )}
+    </div>
+  ) : (
+    <div className="galleryLabel">
+      <span>
+        <button
+          className={createClassName('galleryLabel_btn', 'active', isActive)}
+          onClick={onLabelClick}
+        ></button>
+      </span>
+      <p className={createClassName('galleryLabel_title', 'active', isActive)}>
+        {title}
+      </p>
     </div>
   );
 };

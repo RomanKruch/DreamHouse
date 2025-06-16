@@ -4,8 +4,16 @@
 .galleryItem {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position: center bottom;
   width: 100vw;
   height: 100vh;
   position: relative;
+
+  @media (max-width: $tablet) {
+    padding: 100px 70px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 100px 35px;
+  }
 }

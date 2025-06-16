@@ -9,8 +9,8 @@ import Range from '../../components/Range/Range';
 import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner';
 
 const Section4 = () => {
-  const max = 125;
-  const [value, setValue] = useState(30);
+  const max = 499;
+  const [value, setValue] = useState(100);
   const [selectedI, setSelectedI] = useState(0);
 
   return (
