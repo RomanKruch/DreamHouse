@@ -46,16 +46,25 @@
     }
 
     &:nth-child(1) {
-      @include sectionBackground('../../assets/bg/bg-3-1.jpg', 0.65);
+      @include sectionBackground(
+        'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186350/DreamHouse/bg-3-1_ekaxcv.jpg',
+        0.65
+      );
     }
     &:nth-child(2) {
-      @include sectionBackground('../../assets/bg/bg-3-2.jpg', 0.65);
+      @include sectionBackground(
+        'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186350/DreamHouse/bg-3-2_hcjln9.jpg',
+        0.65
+      );
       @media (min-width: $tablet) {
         @include customBorders;
       }
     }
     &:nth-child(3) {
-      @include sectionBackground('../../assets/bg/bg-3-3.jpg', 0.65);
+      @include sectionBackground(
+        'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186351/DreamHouse/bg-3-3_c7q8tp.jpg',
+        0.65
+      );
     }
 
     &-active {

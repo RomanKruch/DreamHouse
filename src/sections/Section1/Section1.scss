@@ -2,7 +2,10 @@
 @import '../../variables';
 
 .section1 {
-  @include sectionBackground('../../assets/bg/bg-1.jpg', 0.45);
+  @include sectionBackground(
+    'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186350/DreamHouse/bg-1_l5zaid.jpg',
+    0.45
+  );
   padding: 20vh 0 0 15vw;
 
   @media (max-width: $tablet) {

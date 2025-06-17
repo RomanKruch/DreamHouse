@@ -1,22 +1,4 @@
 import { IGalleryItem } from './GalleryPage';
-import elite1 from '../../assets/gallery/elite_1.jpg';
-import elite2 from '../../assets/gallery/elite_2.jpg';
-import elite3 from '../../assets/gallery/elite_3.jpg';
-import elite4 from '../../assets/gallery/elite_4.jpg';
-import vip1 from '../../assets/gallery/vip_1.jpg';
-import vip2 from '../../assets/gallery/vip_2.jpg';
-import vip3 from '../../assets/gallery/vip_3.jpg';
-import vip4 from '../../assets/gallery/vip_4.jpg';
-import vip5 from '../../assets/gallery/vip_5.jpg';
-import vip6 from '../../assets/gallery/vip_6.jpg';
-import extra1 from '../../assets/gallery/extra_1.jpg';
-import extra2 from '../../assets/gallery/extra_2.jpg';
-import extra3 from '../../assets/gallery/extra_3.jpg';
-import extra4 from '../../assets/gallery/extra_4.jpg';
-import extra5 from '../../assets/gallery/extra_5.jpg';
-import extra6 from '../../assets/gallery/extra_6.jpg';
-import extra7 from '../../assets/gallery/extra_7.jpg';
-import extra8 from '../../assets/gallery/extra_8.jpg';
 
 interface IDataItem {
   bg: string;
@@ -32,7 +14,7 @@ interface IData {
 export const GalleryData: IData = {
   elite: [
     {
-      bg: elite1,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186719/DreamHouse/elite_1_duidbj.jpg',
       labels: [
         {
           title: 'Dismantling and construction of interior partitions',
@@ -67,7 +49,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: elite2,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186719/DreamHouse/elite_2_yvirqk.jpg',
       labels: [
         {
           title: 'Hatch installation for access to riser',
@@ -103,7 +85,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: elite3,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186722/DreamHouse/elite_3_hv0vhx.jpg',
       labels: [
         {
           title: 'Installation of drywall ceiling',
@@ -139,7 +121,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: elite4,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186722/DreamHouse/elite_4_oaip2g.jpg',
       labels: [
         {
           title: 'Preparing walls for wallpapering',
@@ -177,7 +159,7 @@ export const GalleryData: IData = {
   ],
   vip: [
     {
-      bg: vip1,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186729/DreamHouse/vip_1_exahmk.jpg',
       labels: [
         {
           title: 'Stretch ceiling of VIP quality',
@@ -212,7 +194,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: vip2,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186729/DreamHouse/vip_2_xwe6ef.jpg',
       labels: [
         {
           title:
@@ -249,7 +231,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: vip3,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186730/DreamHouse/vip_3_liekxc.jpg',
       labels: [
         {
           title: 'Electrical installation work (according to the project)',
@@ -285,7 +267,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: vip4,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186731/DreamHouse/vip_4_swcgwo.jpg',
       labels: [
         {
           title: 'Ceiling cornice installation',
@@ -320,7 +302,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: vip5,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186732/DreamHouse/vip_5_tvwqtv.jpg',
       labels: [
         {
           title: 'Installation of gypsum ceiling (2 layers) at one level',
@@ -356,7 +338,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: vip6,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186733/DreamHouse/vip_6_i6xaoc.jpg',
       labels: [
         {
           title:
@@ -395,7 +377,7 @@ export const GalleryData: IData = {
   ],
   extra: [
     {
-      bg: extra1,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186720/DreamHouse/extra_1_zd8bhq.jpg',
       labels: [
         {
           title: 'Installation of interior doors',
@@ -430,7 +412,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: extra2,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186721/DreamHouse/extra_2_d90yjv.jpg',
       labels: [
         {
           title: 'Stretch ceiling of EXTRA quality ("floating" construction)',
@@ -467,7 +449,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: extra3,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186722/DreamHouse/extra_3_xoh5sf.jpg',
       labels: [
         {
           title: 'Installation of a hidden revision hatch with tile cladding',
@@ -503,7 +485,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: extra4,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186724/DreamHouse/extra_4_fdrowb.jpg',
       labels: [
         {
           title: 'Installation of air conditioning system',
@@ -538,7 +520,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: extra5,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186724/DreamHouse/extra_5_i79cqq.jpg',
       labels: [
         {
           title: 'Installation of electrical fittings',
@@ -575,7 +557,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: extra6,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186725/DreamHouse/extra_6_tokqw2.jpg',
       labels: [
         {
           title: 'Installation of low-voltage wiring (internet, antenna)',
@@ -611,7 +593,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: extra7,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186727/DreamHouse/extra_7_itrb5j.jpg',
       labels: [
         {
           title: 'Ventilation works',
@@ -646,7 +628,7 @@ export const GalleryData: IData = {
       ],
     },
     {
-      bg: extra8,
+      bg: 'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186727/DreamHouse/extra_8_b5pihp.jpg',
       labels: [
         {
           title: 'Installation of ceiling cornice',

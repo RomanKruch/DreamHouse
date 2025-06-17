@@ -2,7 +2,10 @@
 @import '../../variables';
 
 .section2 {
-  @include sectionBackground('../../assets/bg/bg-2.jpg', 0.6);
+  @include sectionBackground(
+    'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186350/DreamHouse/bg-2_olvvwm.jpg',
+    0.6
+  );
 
   @media (max-width: $tablet) {
     display: none;
@@ -32,7 +35,6 @@
 
     @media (max-width: $laptop) {
       margin-bottom: 9vh;
-
     }
   }
 
@@ -97,7 +99,7 @@
     align-items: center;
 
     margin-left: 10vw;
-    
+
     cursor: pointer;
     transition: color 0.3s;
 

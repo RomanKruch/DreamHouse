@@ -2,7 +2,10 @@
 @import '../../variables';
 
 .section6 {
-  @include sectionBackground('../../assets/bg/bg-5.jpg', 0.6);
+  @include sectionBackground(
+    'https://res.cloudinary.com/drn4sj8ju/image/upload/v1750186352/DreamHouse/bg-5_xzjpvq.jpg',
+    0.6
+  );
 
   @media (max-width: $tablet) {
     height: fit-content;
