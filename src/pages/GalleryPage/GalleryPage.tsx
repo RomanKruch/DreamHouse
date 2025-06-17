@@ -2,7 +2,12 @@ import { useState, useRef } from 'react';
 import GalleryPagination from '../../components/GalleryPagination/GalleryPagination';
 import GalleryItem from '../../modules/GalleryItem/GalleryItem';
 import BtnWithArrow from '../../common/BtnWithArrow/BtnWithArrow';
-import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
+import {
+  NavLink,
+  Outlet,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
 import { GalleryData } from './data';
 import './GalleryPage.scss';
 
@@ -83,6 +88,8 @@ const GalleryPage = () => {
       />
 
       <RegistrationBaner className="gallery_baner" />
+
+      <Outlet />
     </main>
   );
 };

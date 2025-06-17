@@ -578,13 +578,6 @@ export const GalleryData: IData = {
       bg: extra6,
       labels: [
         {
-          title:
-            'Installation of drywall ceiling of any configuration, with preparation and painting',
-          position: { top: '12%', left: '50%' },
-          view: 'mirrored',
-          orientation: 'inverse',
-        },
-        {
           title: 'Installation of low-voltage wiring (internet, antenna)',
           position: { top: '27%', left: '32%' },
           view: 'mirrored',

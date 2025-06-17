@@ -64,7 +64,15 @@ function App() {
           <Route path="call" element={<CallModal />} />
           <Route path="about" element={<AboutModal />} />
         </Route>
-        <Route path="/gallery" element={<GalleryPage />} />
+        
+        <Route path="/gallery" element={<GalleryPage />}>
+          <Route
+            path="navigation"
+            element={<NavModal activeSectionId={activeSection} />}
+          />
+          <Route path="call" element={<CallModal />} />
+          <Route path="about" element={<AboutModal />} />
+        </Route>
       </Routes>
     </>
   );

@@ -5,24 +5,33 @@ import createActiveClass from '../../helpers/createActiveClassName';
 import Logo from '../../common/Logo/Logo';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+const ModalTypes = ['navigation', 'call', 'about'];
+
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const path = location.pathname;
+  const query = location.search; 
 
-  const onNavBtn = () => {
-    if (location.pathname === '/navigation') {
-      navigate('/');
-    } else {
-      navigate('/navigation');
-    }
-  };
+  const basePath = path.split('/');
+  const lastSegment = basePath[basePath.length - 1];
 
-  const onCallBtn = () => {
-    if (location.pathname === '/call') {
-      navigate('/');
+  const onOpenModal = (type: string) => () => {
+    const isModalOpen = ModalTypes.includes(lastSegment);
+
+    let newPath = '';
+
+    if (isModalOpen) {
+      if (lastSegment === type) {
+        newPath = path.replace(/\/[^/]*$/, '');
+      } else {
+        newPath = path.replace(/\/[^/]*$/, '') + '/' + type;
+      }
     } else {
-      navigate('/call');
+      newPath = path + '/' + type;
     }
+
+    navigate(newPath + query);
   };
 
   return (
@@ -32,9 +41,9 @@ const Header = () => {
         <button
           className={createActiveClass(
             'header_burgerBtn',
-            location.pathname === '/navigation',
+            lastSegment === 'navigation',
           )}
-          onClick={onNavBtn}
+          onClick={onOpenModal('navigation')}
         >
           <span></span>
         </button>
@@ -45,11 +54,11 @@ const Header = () => {
         <button
           className={createActiveClass(
             'header_call_btn',
-            location.pathname === '/call',
+            lastSegment === 'call',
           )}
-          onClick={onCallBtn}
+          onClick={onOpenModal('call')}
         >
-          {location.pathname === '/call' ? <CloseIcon /> : <Phone />}
+          {lastSegment === 'call' ? <CloseIcon /> : <Phone />}
         </button>
       </div>
     </header>
