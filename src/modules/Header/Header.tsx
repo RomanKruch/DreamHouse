@@ -5,13 +5,13 @@ import createActiveClass from '../../helpers/createActiveClassName';
 import Logo from '../../common/Logo/Logo';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const ModalTypes = ['navigation', 'call', 'about'];
+const ModalTypes = ['navigation', 'call', 'about', 'services'];
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const path = location.pathname;
-  const query = location.search; 
+  const query = location.search;
 
   const basePath = path.split('/');
   const lastSegment = basePath[basePath.length - 1];
@@ -31,7 +31,11 @@ const Header = () => {
       newPath = path + '/' + type;
     }
 
-    navigate(newPath + query);
+    if (lastSegment === 'services') {
+      navigate('/' + newPath);
+    } else {
+      navigate('/' + newPath + query);
+    }
   };
 
   return (

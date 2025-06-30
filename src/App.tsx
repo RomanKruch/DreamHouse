@@ -12,6 +12,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutModal from './pages/AboutPage/AboutModal';
 import GalleryPage from './pages/GalleryPage/GalleryPage';
+import ServicesModal from './modules/ServicesModal/ServicesModal';
 
 const sectionIds = ['1', '2', '3', '4', '5', '6'];
 
@@ -63,8 +64,9 @@ function App() {
           />
           <Route path="call" element={<CallModal />} />
           <Route path="about" element={<AboutModal />} />
+          <Route path="services" element={<ServicesModal />} />
         </Route>
-        
+
         <Route path="/gallery" element={<GalleryPage />}>
           <Route
             path="navigation"

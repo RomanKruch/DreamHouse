@@ -26,14 +26,14 @@ const Section3Item = ({
       <h3 className="section3_item_title">{title}</h3>
       <div className="section3_item_wrap">
         <p className="section3_item_description">{description}</p>
-        <NavLink to={`/gallery?style=${title}`}  className="section3_item_link">
+        <NavLink to={`/gallery?style=${title}`} className="section3_item_link">
           gallery
           <ArrowIcon />
         </NavLink>
-        <a className="section3_item_link">
+        <NavLink to={`/services?style=${title}`} className="section3_item_link">
           list of services
           <ArrowIcon />
-        </a>
+        </NavLink>
       </div>
     </li>
   );

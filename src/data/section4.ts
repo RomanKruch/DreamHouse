@@ -1,21 +1,18 @@
 const data = [
   {
-    id: 0,
     title: 'Elite',
     description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+      'Basic renovation style with essential finishes and standard materials. Ideal for simple, clean interiors.',
   },
   {
-    id: 1,
     title: 'Vip',
     description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+      'Advanced style with improved materials, custom design elements, and more refined execution.',
   },
   {
-    id: 2,
     title: 'Extra',
     description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.',
+      'Premium renovation with top-tier materials, luxury details, and designer-level customization. Best-in-class quality.',
   },
 ];
 

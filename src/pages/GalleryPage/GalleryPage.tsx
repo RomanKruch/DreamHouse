@@ -18,6 +18,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import RegistrationBaner from '../../modules/RegistrationBaner/RegistrationBaner';
 import CloseIcon from '../../assets/icons/close_icon';
+import { isValidStyle, TStyles } from '../../helpers/isValidStyle';
 
 export interface IGalleryItem {
   title: string;
@@ -28,13 +29,6 @@ export interface IGalleryItem {
   view: 'common' | 'mirrored';
   orientation: 'common' | 'inverse';
 }
-
-type TStyles = 'elite' | 'vip' | 'extra';
-const styles: TStyles[] = ['elite', 'vip', 'extra'];
-
-const isValidStyle = (val: string): val is TStyles => {
-  return styles.includes(val as TStyles);
-};
 
 const GalleryPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
