@@ -7,9 +7,16 @@ interface IProps {
   value: string;
   setValue: (value: string) => void;
   white?: boolean;
+  error?: string;
 }
 
-const TextInput = ({ placeholder, value, setValue, white = false }: IProps) => {
+const TextInput = ({
+  placeholder,
+  value,
+  setValue,
+  white = false,
+  error = '',
+}: IProps) => {
   const id = uuid();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +24,7 @@ const TextInput = ({ placeholder, value, setValue, white = false }: IProps) => {
   };
 
   return (
-    <div className="textInput">
+    <div className={createClassName('textInput', 'error', error)}>
       <input
         className={createClassName('textInput_inp', 'white', white)}
         type="text"
@@ -32,6 +39,7 @@ const TextInput = ({ placeholder, value, setValue, white = false }: IProps) => {
       >
         {placeholder}
       </label>
+      {error && <p className='textInput_error'>{error}</p>}
     </div>
   );
 };

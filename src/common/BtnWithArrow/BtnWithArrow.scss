@@ -32,4 +32,14 @@
     color: $white;
     @include changeArrowColor($white);
   }
+
+  &:disabled {
+    color: #666;
+    @include changeArrowColor(#666);
+
+    &:hover {
+      color: #666;
+      @include changeArrowColor(#666);
+    }
+  }
 }

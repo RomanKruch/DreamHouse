@@ -7,8 +7,12 @@ const ThankYou = () => {
 
   return (
     <div className="thankYou">
-      <h2 className="thankYou_title">thank you for your application!</h2>
-      <p className="thankYou_subtitle">Our manager will contact you shortly.</p>
+      <h2 className="thankYou_title">Thank you for your application!</h2>
+      <p className="thankYou_subtitle">
+        Your request has landed safely in our demo inbox 📬
+        <br /> Since this is a portfolio project, no real manager will contact
+        you — but your submission was a success! 🎉
+      </p>
       <BtnWithArrow
         text="return to the main page"
         white={true}

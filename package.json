@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/uuid": "^9.0.1",
+    "axios": "^1.13.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.5.2",

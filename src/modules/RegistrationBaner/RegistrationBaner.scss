@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.registrationBaner {
+  &_subtitle {
+    color: $black;
+    text-indent: 2em;
+
+    &:first-child {
+        font-weight: 700;
+    }
+  }
+}

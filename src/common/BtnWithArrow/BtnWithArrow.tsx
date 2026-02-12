@@ -7,6 +7,7 @@ interface IProps {
   white?: boolean;
   onClick?: () => void;
   className?: string;
+  disabled?: boolean;
 }
 
 const BtnWithArrow = ({
@@ -14,6 +15,7 @@ const BtnWithArrow = ({
   white = false,
   onClick,
   className = '',
+  disabled = false,
 }: IProps) => {
   return (
     <button
@@ -21,6 +23,7 @@ const BtnWithArrow = ({
         createClassName('btnWithArrow', 'white', white) + ' ' + className
       }
       onClick={onClick}
+      disabled={disabled}
     >
       {text}
       <ArrowIcon />
