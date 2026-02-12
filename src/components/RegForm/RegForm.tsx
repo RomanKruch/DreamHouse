@@ -1,18 +1,43 @@
-import { useState } from 'react';
 import TextInput from '../../common/TextInput/TextInput';
 import './RegForm.scss';
 import BtnWithArrow from '../../common/BtnWithArrow/BtnWithArrow';
 import compareClassName from '../../helpers/compareClassName';
 
+export interface IFormData {
+  name: string;
+  phone: string;
+}
+
+export interface IValidError {
+  field: string;
+  message: string;
+}
+
 interface IProps {
   white?: boolean;
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
   className?: string;
+  formData: IFormData;
+  setFormData: React.Dispatch<React.SetStateAction<IFormData>>;
+  loading: boolean,
+  validErrors: IValidError[]
 }
 
-const RegForm = ({ white = false, onSubmit, className = '' }: IProps) => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+const RegForm = ({
+  white = false,
+  onSubmit,
+  className = '',
+  formData,
+  setFormData,
+  loading,
+  validErrors
+}: IProps) => {
+  const { name, phone } = formData;
+  type FormFields = keyof IFormData;
+
+  const setValue = (field: FormFields) => (value: string) => {
+    setFormData(s => ({ ...s, [field]: value }));
+  };
 
   return (
     <form
@@ -21,19 +46,21 @@ const RegForm = ({ white = false, onSubmit, className = '' }: IProps) => {
     >
       <TextInput
         value={name}
-        setValue={setName}
+        setValue={setValue('name')}
         placeholder="Your name"
         white={white}
+        error={validErrors.find(err => err.field === 'name')?.message}
       />
 
       <TextInput
         value={phone}
-        setValue={setPhone}
+        setValue={setValue('phone')}
         placeholder="Your phone number"
         white={white}
+        error={validErrors.find(err => err.field === 'phone')?.message}
       />
 
-      <BtnWithArrow text="discuss a project" white={white} />
+      <BtnWithArrow text="discuss a project" white={white} disabled={loading}/>
     </form>
   );
 };

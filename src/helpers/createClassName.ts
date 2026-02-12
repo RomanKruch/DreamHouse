@@ -1,7 +1,7 @@
 const createClassName = (
   defClass: string,
   mark: string,
-  condition: boolean,
+  condition: boolean | string,
 ) => {
   if (condition) {
     return `${defClass} ${defClass}-${mark}`;
