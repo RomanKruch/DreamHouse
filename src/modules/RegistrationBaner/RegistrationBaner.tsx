@@ -31,7 +31,10 @@ const RegistrationBaner = ({ className = '' }: IProps) => {
 
     setLoading(true);
     try {
-      await axios.post('http://localhost:3000/requests', formData);
+      await axios.post(
+        'https://dreamhouseback-production-07b1.up.railway.app/requests',
+        formData,
+      );
       setValidErrors([]);
       setIsSubmit(true);
     } catch (error: any) {
